@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Frontend Mentor - Clipboard landing page solution
 
 This is a solution to the [Clipboard landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/clipboard-landing-page-5cc9bccd6c4c91111378ecb9).
@@ -107,3 +108,6 @@ Check out my latest previous articles:
     -   [HashNode](https://hafnawi.hashnode.dev/)
     -   [Dev.to](https://dev.to/ymhaah)
     -   [Medium](https://medium.com/@ymhaah250)
+=======
+# NPFF-Agency => nice project for freelace 
+>>>>>>> 6313bfb5bfd5a1622ac0e4e2231bc88c4a876d14
