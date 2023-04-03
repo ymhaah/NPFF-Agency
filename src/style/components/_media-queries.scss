@@ -28,6 +28,9 @@
 // For laptop, S-Monitor
 
 @media screen and (max-width: #{toEm(768px)}) {
+    .c-scrollbar {
+        display: none;
+    }
     .main-header {
         .Container {
             --container-width: 90%;

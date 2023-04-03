@@ -45,7 +45,7 @@
     // light
     --bg-clr-light: var(--clr-white);
     --txt-clr-light: var(--clr-black);
-    --accent-clr-light: var(--clr-blue-400);
+    --accent-clr-light: var(--clr-gray-600);
     --secondary-clr-light: var(--clr-gray-300);
 
     // dark
@@ -61,16 +61,16 @@
     --secondary-clr: var(--secondary-clr-light);
     color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-    // if the browther is on dark mode the dark mode work automatically
-    :root {
-        --bg-clr: var(--bg-clr-dark);
-        --txt-clr: var(--txt-clr-dark);
-        --accent-clr: var(--accent-clr-dark);
-        --secondary-clr: var(--secondary-clr-dark);
-        color-scheme: dark;
-    }
-}
+// @media (prefers-color-scheme: dark) {
+//     // if the browther is on dark mode the dark mode work automatically
+//     :root {
+//         --bg-clr: var(--bg-clr-dark);
+//         --txt-clr: var(--txt-clr-dark);
+//         --accent-clr: var(--accent-clr-dark);
+//         --secondary-clr: var(--secondary-clr-dark);
+//         color-scheme: dark;
+//     }
+// }
 
 @media (forced-colors: active) {
 }

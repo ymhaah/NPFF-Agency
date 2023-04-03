@@ -38,7 +38,11 @@ function App() {
     //     }
     // }, [window.innerWidth]);
 
-    return <div className="App"></div>;
+    return (
+        <div className="App">
+            <main></main>
+        </div>
+    );
 }
 
 export default App;

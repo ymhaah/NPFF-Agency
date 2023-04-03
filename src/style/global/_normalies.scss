@@ -37,11 +37,9 @@ body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
-    background-color: var(--bg-clr);
+    // background-color: var(--bg-clr);
 }
-main {
-    min-height: 100vh;
-    width: 100vw;
+#Main {
 }
 .Container {
     --container-width: 90%;
