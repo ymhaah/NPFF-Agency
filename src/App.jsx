@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import Button from "@ui/Button.jsx";
+
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 
@@ -40,7 +42,7 @@ function App() {
 
     return (
         <div className="App">
-            <main></main>
+            <Button content="test" />
         </div>
     );
 }
