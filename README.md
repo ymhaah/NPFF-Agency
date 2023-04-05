@@ -1,5 +1,5 @@
 
-# NPFF-Agency => nice project for freelace
+# NPFF-Agency -> nice project for freelace
 
 ### Useful resources
 
