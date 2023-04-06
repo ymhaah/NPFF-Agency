@@ -3,34 +3,22 @@
 
 // ################################
 
-$minFont: 12px;
-$maxFont: 24px;
-$addOnMin: 1.2;
-$addOnMax: 1.3;
+// smallest font size 16 uppercase 400 LH 1.4
+// biggest font size 384 = 24rem 500
 
-// ################################
-
-:root {
-    @for $inti from 1 to 10 {
-        $inti: $inti * 100;
-        --fs-#{$inti}: #{ClampCalc($minFont, $maxFont)};
-        $minFont: $minFont * $addOnMin;
-        $maxFont: $maxFont * $addOnMax;
-    }
-}
-// @supports not (font-size: clamp(0.9rem, 0.3rem + 1.7vw, 1.9rem)) {
-// 	:root {
-// 		@for $inti from 1 to 10 {
-// 			$inti: $inti * 100;
-// 			@include fluid-type-var($minFont, $maxFont, $inti);
-// 			$minFont: $minFont * $addOnMin;
-// 			$maxFont: $maxFont * $addOnMax;
-// 		}
-// 	}
-// }
 :root {
     // font families
     --font-family: "Rubik", sans-serif;
+
+    --fs-100: #{ClampCalc(18px, 20px)};
+    --fs-200: #{ClampCalc(22px, 28px)};
+    --fs-300: #{ClampCalc(24px, 32px)};
+    --fs-400: #{ClampCalc(32px, 64px)};
+    --fs-500: #{ClampCalc(52px, 130px)};
+    --fs-600: #{ClampCalc(60px, 190px)};
+    --fs-700: #{ClampCalc(72px, 210px)};
+    --fs-800: #{ClampCalc(98px, 280px)};
+    --fs-900: #{ClampCalc(128px, 300px)};
 
     // font sizes
     --fs-s: var(--fs-100);
@@ -52,49 +40,47 @@ body {
 :where(h1, h2, h3, h4, p, a:not(.Button), .Button, span) {
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: #{toRem(2px)};
+    // letter-spacing: #{toRem(2px)};
     color: var(--txt-clr);
 }
 :where(h1, h2, h3, h4, p, span):not(:last-child) {
     margin: 0 0 1rem 0;
 }
-h1,
-.h1 {
-    font-size: var(--fs-l);
-    font-weight: var(--fw-b);
-}
-h2,
-.h2 {
-    font-size: var(--fs-l);
-    font-weight: var(--fw-b);
-}
-h3,
-.h3 {
-    font-size: var(--fs-m);
-    font-weight: var(--fw-m);
-}
-h4,
-.h4 {
-    font-size: var(--fs-s);
-    font-weight: var(--fw-m);
-}
-p,
-.p {
-    font-size: var(--fs-s);
-    font-weight: var(--fw-l);
-}
-a:not(.Button) {
-    font-size: var(--fs-s);
-    font-weight: var(--fw-m);
-    text-decoration: none;
-}
+// h1,
+// .h1 {
+//     font-size: var(--fs-900);
+//     font-weight: var(--fw-b);
+// }
+// h2,
+// .h2 {
+//     font-size: var(--fs-l);
+//     font-weight: var(--fw-b);
+// }
+// h3,
+// .h3 {
+//     font-size: var(--fs-m);
+//     font-weight: var(--fw-m);
+// }
+// h4,
+// .h4 {
+//     font-size: var(--fs-s);
+//     font-weight: var(--fw-m);
+// }
+// p,
+// .p {
+//     font-size: var(--fs-s);
+//     font-weight: var(--fw-l);
+// }
+// a:not(.Button) {
+//     font-size: var(--fs-s);
+//     font-weight: var(--fw-m);
+//     text-decoration: none;
+// }
 @for $inti from 1 to 10 {
     $inti: $inti * 100;
     .fs-#{$inti} {
         font-size: var(--fs-#{$inti});
     }
-    $minFont: $minFont * $addOnMin;
-    $maxFont: $maxFont * $addOnMax;
 }
 .fs-s {
     font-size: var(--fs-100);
