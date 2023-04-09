@@ -1,15 +1,64 @@
 @use "./colors.scss" as *;
 @use "../util/index" as *;
 
-// ################################
-
-// smallest font size 16 uppercase 400 LH 1.4
-// biggest font size 384 = 24rem 500
+// ! font file path is made to match the path from the css file not from the sass file
+// ! Rachel => serif
+@font-face {
+    font-family: "Rachel";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./assets/fonts/Rachel/Roman.woff2") format("woff2"),
+        url("./assets/fonts/Rachel/Roman.woff") format("woff"),
+        url("./assets/fonts/Rachel/Roman.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Rachel";
+    font-weight: 400;
+    font-style: italic;
+    src: url("./assets/fonts/Rachel/italic.woff2") format("woff2"),
+        url("./assets/fonts/Rachel/italic.woff") format("woff"),
+        url("./assets/fonts/Rachel/italic.ttf") format("truetype");
+}
+// ! Mosk => sans-serif
+@font-face {
+    font-family: "Mosk";
+    font-weight: 200;
+    font-style: normal;
+    src: url("./assets/fonts/Mosk/Extra-Light_200.woff2") format("woff2"),
+        url("./assets/fonts/Mosk/Extra-Light_200.woff") format("woff"),
+        url("./assets/fonts/Mosk/Extra-Light_200.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Mosk";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./assets/fonts/Mosk/normal_400.woff2") format("woff2"),
+        url("./assets/fonts/Mosk/normal_400.woff") format("woff"),
+        url("./assets/fonts/Mosk/normal_400.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Mosk";
+    font-weight: 600;
+    font-style: normal;
+    src: url("./assets/fonts/Mosk/Semi-Bold_600.woff2") format("woff2"),
+        url("./assets/fonts/Mosk/Semi-Bold_600.woff") format("woff"),
+        url("./assets/fonts/Mosk/Semi-Bold_600.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Mosk";
+    font-weight: 900;
+    font-style: normal;
+    src: url("./assets/fonts/Mosk/Ultra-Bold_900.woff2") format("woff2"),
+        url("./assets/fonts/Mosk/Ultra-Bold_900.woff") format("woff"),
+        url("./assets/fonts/Mosk/Ultra-Bold_900.ttf") format("truetype");
+}
 
 :root {
     // font families
-    --font-family: "Rubik", sans-serif;
+    --ff-mosk: "Mosk", sans-serif;
+    --ff-rachel: "Rachel", serif;
 
+    // font sizes
     --fs-100: #{ClampCalc(18px, 20px)};
     --fs-200: #{ClampCalc(22px, 28px)};
     --fs-300: #{ClampCalc(24px, 32px)};
@@ -20,21 +69,21 @@
     --fs-800: #{ClampCalc(98px, 280px)};
     --fs-900: #{ClampCalc(128px, 300px)};
 
-    // font sizes
     --fs-s: var(--fs-100);
     --fs-m: var(--fs-300);
     --fs-l: var(--fs-500);
     --fs-xl: var(--fs-700);
     --fs-xxl: var(--fs-900);
 
-    //Weights
-    --fw-l: 400;
-    --fw-m: 500;
-    --fw-b: 700;
+    // font weights
+    --fw-l: 200;
+    --fw-n: 400;
+    --fw-m: 600;
+    --fw-b: 900;
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--ff-mosk);
 }
 
 :where(h1, h2, h3, h4, p, a:not(.Button), .Button, span) {
@@ -46,36 +95,36 @@ body {
 :where(h1, h2, h3, h4, p, span):not(:last-child) {
     margin: 0 0 1rem 0;
 }
-// h1,
-// .h1 {
-//     font-size: var(--fs-900);
-//     font-weight: var(--fw-b);
-// }
-// h2,
-// .h2 {
-//     font-size: var(--fs-l);
-//     font-weight: var(--fw-b);
-// }
-// h3,
-// .h3 {
-//     font-size: var(--fs-m);
-//     font-weight: var(--fw-m);
-// }
-// h4,
-// .h4 {
-//     font-size: var(--fs-s);
-//     font-weight: var(--fw-m);
-// }
-// p,
-// .p {
-//     font-size: var(--fs-s);
-//     font-weight: var(--fw-l);
-// }
-// a:not(.Button) {
-//     font-size: var(--fs-s);
-//     font-weight: var(--fw-m);
-//     text-decoration: none;
-// }
+h1,
+.h1 {
+    font-size: var(--fs-l);
+    font-weight: var(--fw-m);
+}
+h2,
+.h2 {
+    font-size: var(--fs-l);
+    font-weight: var(--fw-m);
+}
+h3,
+.h3 {
+    font-size: var(--fs-m);
+    font-weight: var(--fw-m);
+}
+h4,
+.h4 {
+    font-size: var(--fs-s);
+    font-weight: var(--fw-n);
+}
+p,
+.p {
+    font-size: var(--fs-s);
+    font-weight: var(--fw-l);
+}
+a:not(.Button) {
+    font-size: var(--fs-s);
+    font-weight: var(--fw-n);
+    text-decoration: none;
+}
 @for $inti from 1 to 10 {
     $inti: $inti * 100;
     .fs-#{$inti} {
@@ -100,16 +149,19 @@ body {
 .fw-l {
     font-weight: var(--fw-l);
 }
+.fw-n {
+    font-weight: var(--fw-n);
+}
 .fw-m {
     font-weight: var(--fw-m);
 }
 .fw-b {
     font-weight: var(--fw-b);
 }
-.link {
-    text-decoration: underline !important;
-    color: var(--accent-clr) !important;
-}
+// .link {
+//     text-decoration: underline !important;
+//     color: var(--accent-clr) !important;
+// }
 // .link:hover,
 // .link:focus {
 // }

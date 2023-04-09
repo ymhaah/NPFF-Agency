@@ -7,6 +7,12 @@ import Footer from "./components/Footer.jsx";
 
 import setSpecialThings from "./utils/setSpecialThingsFun.js";
 import randomNum from "./utils/randomNum.js";
+import LocomotiveScroll from "locomotive-scroll";
+
+const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+});
 
 console.log(`Made with 💙 by Youssef Hafnawy`);
 // console.warn("the min dimensions is 4");
