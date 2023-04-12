@@ -164,12 +164,6 @@
 // 		scroll-snap-points-y: repeat(100vh);
 // 	}
 // }
-@supports (overflow-x: clip) {
-    html,
-    body {
-        overflow-x: clip;
-    }
-}
 @supports (height: 100svh) {
 }
 @supports (aspect-ratio: 1 / 1) {

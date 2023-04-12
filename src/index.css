@@ -1,34 +1,15 @@
 :root {
-  --clr-red-400: hsl(345, 88%, 66%);
-  --clr-red-700: hsl(0, 94%, 66%);
-  --clr-red-800: hsl(344, 100%, 54%);
-  --clr-blue-300: hsl(209, 91%, 65%);
-  --clr-blue-400: hsl(209, 98%, 56%);
-  --clr-blue-500: hsl(216, 98%, 52%);
-  --clr-pink: hsl(330, 67%, 52%);
-  --clr-purple: hsl(261, 51%, 51%);
-  --clr-green: hsl(152, 69%, 31%);
-  --clr-yellow: hsl(45, 100%, 51%);
-  --clr-orange: hsl(27, 98%, 54%);
   --clr-gray-600: hsl(210, 11%, 15%);
   --clr-gray-300: hsl(210, 11%, 71%);
+  --clr-dark-gray: hsl(225, 7%, 12%);
   --clr-black: hsl(0, 0%, 0%);
+  --clr-tan: hsl(33, 12%, 83%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-alpha-white: 0 0% 100%;
   --clr-alpha-black: 0 0% 0%;
-  --bg-clr-light: var(--clr-white);
-  --txt-clr-light: var(--clr-black);
-  --accent-clr-light: var(--clr-gray-600);
-  --secondary-clr-light: var(--clr-gray-300);
-  --bg-clr-dark: var(--clr-gray-600);
-  --txt-clr-dark: var(--clr-white);
-  --accent-clr-dark: var(--clr-blue-500);
-  --secondary-clr-dark: var(--clr-gray-300);
-  --bg-clr: var(--bg-clr-light);
-  --txt-clr: var(--txt-clr-light);
-  --accent-clr: var(--accent-clr-light);
-  --secondary-clr: var(--secondary-clr-light);
-  color-scheme: light;
+  --main-dark-clr: var(--clr-dark-gray);
+  --main-light-clr: ;
+  --accent-clr: ;
 }
 
 .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul {
@@ -55,36 +36,42 @@
   font-family: "Rachel";
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
   src: url("./assets/fonts/Rachel/Roman.woff2") format("woff2"), url("./assets/fonts/Rachel/Roman.woff") format("woff"), url("./assets/fonts/Rachel/Roman.ttf") format("truetype");
 }
 @font-face {
   font-family: "Rachel";
   font-weight: 400;
   font-style: italic;
+  font-display: swap;
   src: url("./assets/fonts/Rachel/italic.woff2") format("woff2"), url("./assets/fonts/Rachel/italic.woff") format("woff"), url("./assets/fonts/Rachel/italic.ttf") format("truetype");
 }
 @font-face {
   font-family: "Mosk";
   font-weight: 200;
   font-style: normal;
+  font-display: swap;
   src: url("./assets/fonts/Mosk/Extra-Light_200.woff2") format("woff2"), url("./assets/fonts/Mosk/Extra-Light_200.woff") format("woff"), url("./assets/fonts/Mosk/Extra-Light_200.ttf") format("truetype");
 }
 @font-face {
   font-family: "Mosk";
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
   src: url("./assets/fonts/Mosk/normal_400.woff2") format("woff2"), url("./assets/fonts/Mosk/normal_400.woff") format("woff"), url("./assets/fonts/Mosk/normal_400.ttf") format("truetype");
 }
 @font-face {
   font-family: "Mosk";
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
   src: url("./assets/fonts/Mosk/Semi-Bold_600.woff2") format("woff2"), url("./assets/fonts/Mosk/Semi-Bold_600.woff") format("woff"), url("./assets/fonts/Mosk/Semi-Bold_600.ttf") format("truetype");
 }
 @font-face {
   font-family: "Mosk";
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
   src: url("./assets/fonts/Mosk/Ultra-Bold_900.woff2") format("woff2"), url("./assets/fonts/Mosk/Ultra-Bold_900.woff") format("woff"), url("./assets/fonts/Mosk/Ultra-Bold_900.ttf") format("truetype");
 }
 :root {
@@ -248,8 +235,7 @@ html:focus-within {
 }
 
 body {
-  position: relative;
-  margin: 5rem;
+  margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -259,7 +245,12 @@ html,
 body {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
+}
+
+.App {
+  width: 100vw;
+  height: 200vh;
+  padding: 2rem;
 }
 
 .Container {
@@ -386,8 +377,7 @@ svg {
 
 html.has-scroll-smooth {
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   transform: translateZ(0);
 }
 
@@ -452,7 +442,7 @@ html.has-scroll-dragging {
 }
 
 .c-scrollbar_thumb {
-  --thumb-clr: var(--accent-clr);
+  --thumb-clr: var(--main-dark-clr);
   width: 0.5rem;
   position: absolute;
   top: 0;
@@ -641,12 +631,6 @@ footer .mine p a {
   }
 }
 /*For tablets */
-@supports (overflow-x: clip) {
-  html,
-  body {
-    overflow-x: clip;
-  }
-}
 /* For people who have motion sickness. */
 @media (prefers-reduced-motion: reduce) {
   *,

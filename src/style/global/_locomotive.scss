@@ -64,7 +64,7 @@ html.has-scroll-dragging {
     transform: scaleY(1.3);
 }
 .c-scrollbar_thumb {
-    --thumb-clr: var(--accent-clr);
+    --thumb-clr: var(--main-dark-clr);
     width: #{toRem(8px)};
     position: absolute;
     top: 0;
