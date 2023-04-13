@@ -98,11 +98,21 @@ a,
 select {
     font: inherit;
 }
+.image {
+    width: 20vw;
+    height: 20vh;
+    .blur {
+        width: 100%;
+        height: 100%;
+    }
+}
 img,
 picture,
 svg {
     user-select: none;
-    display: block;
+    width: 100%;
+    height: 100%;
+    // display: block;
 }
 [type="button"] {
     user-select: none;

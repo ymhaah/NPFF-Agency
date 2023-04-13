@@ -5,7 +5,8 @@
         "allowSyntheticDefaultImports": true,
         "baseUrl": "./",
         "paths": {
-            "@ui/*": ["./src/components/uiComponents/*"]
+            "@ui/*": ["./src/components/uiComponents/*"],
+            "@comp/*": ["./src/components/*"]
         }
     },
     "include": ["src"],

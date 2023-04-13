@@ -1,14 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 
-import Button from "@ui/Button.jsx";
+import Hero from "@comp/Hero.jsx";
 
-import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
-
-import setSpecialThings from "./utils/setSpecialThingsFun.js";
-import randomNum from "./utils/randomNum.js";
 import LocomotiveScroll from "locomotive-scroll";
-
 import FontFaceObserver from "fontfaceobserver";
 
 const font1 = new FontFaceObserver("Mosk");
@@ -54,8 +48,7 @@ function App() {
                 skip to the content
             </a>
             <div ref={appRef} className="App" data-scroll-container>
-                <button>test</button>
-                <h1>why every thing red</h1>
+                <Hero />
             </div>
         </>
     );
