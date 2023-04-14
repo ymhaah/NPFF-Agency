@@ -9,17 +9,20 @@ const font1 = new FontFaceObserver("Mosk");
 const font2 = new FontFaceObserver("Rachel");
 
 font1.load().catch(() => {
-    console.error(`${font1.family} failed to load.`);
+    console.error(`${font1.family} font failed to load.`);
 });
 font2.load().catch(() => {
-    console.error(`${font2.family} failed to load.`);
+    console.error(`${font2.family} font failed to load.`);
 });
 
 console.log(`Made with 💙 by Youssef Hafnawy: https://twitter.com/hafanwi`);
 // console.warn("the min dimensions is 4");
 /*
 
-todo: 
+// todo: font
+todo: image
+    // todo: plurHash
+    todo: image opt
 
 */
 

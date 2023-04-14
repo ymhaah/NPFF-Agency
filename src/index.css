@@ -300,14 +300,13 @@ select {
 }
 
 .image {
-  width: 20vw;
-  height: 20vh;
+  width: 40vw;
+  height: 40vw;
 }
-.image .blur {
-  width: 100%;
-  height: 100%;
+.image .blur > div {
+  width: 100% !important;
+  height: 100% !important;
 }
-
 img,
 picture,
 svg {
