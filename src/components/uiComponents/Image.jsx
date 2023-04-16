@@ -1,16 +1,15 @@
-import { useState, useEffect, useRef } from "react";
-
+import { useState } from "react";
 import { Blurhash } from "react-blurhash";
 
 /*
 // todo: add blurhash
-todo: make a json file that Contains different images type (WebP, jpg)
-todo: Make all images have more than one size (phone, tablet, laptop, Monitor)
-todo: use img srcset and make it work automatically with the json file 
-todo: use the picture element and make it work automatically with the json file 
+// todo: make a json file that Contains different images type (WebP, jpg)
+// todo: Make all images have more than one size (phone, tablet, laptop, Monitor)
+// todo: use img srcset and make it work automatically with the json file 
+// todo: use the picture element and make it work automatically with the json file 
 */
 
-function Image({ src, alt, hash }) {
+function Image({ alt = "Image from the artist's gallery", src, hash }) {
     const [imgLoaded, setImgLoaded] = useState(false);
 
     return (
@@ -23,24 +22,21 @@ function Image({ src, alt, hash }) {
             >
                 <Blurhash hash={hash} />
             </div>
-
-            <img
-                src={src}
-                alt={alt}
-                onLoad={() => {
-                    setImgLoaded(true);
-                }}
-                style={{
-                    display: imgLoaded ? "block" : "none",
-                }}
-                loading="lazy"
-            />
-            {/* <img src="img/cat-500.jpg"
-srcset="img/cat-500.jpg 500w,
-img/cat-1000.jpg 1000w,
-img/cat-1500.jpg 1500w"
-sizes="(min-width: 760px) calc(50vw 2em), 100vw"
-alt=""></img> */}
+            <picture>
+                <source type="image/webp" srcSet={src.webp} />
+                <img
+                    srcSet={src.jpg}
+                    src={src.main}
+                    onLoad={() => {
+                        setImgLoaded(true);
+                    }}
+                    style={{
+                        display: imgLoaded ? "block" : "none",
+                    }}
+                    alt={alt}
+                    decoding="async"
+                />
+            </picture>
         </div>
     );
 }

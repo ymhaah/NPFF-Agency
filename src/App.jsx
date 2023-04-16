@@ -1,4 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
+
+import jsonImageData from "../imageData.json";
 
 import Hero from "@comp/Hero.jsx";
 
@@ -33,6 +35,7 @@ todo: image
 
 function App() {
     let appRef = useRef(null);
+    let imageData = jsonImageData;
 
     useEffect(() => {
         const scroll = new LocomotiveScroll({
@@ -51,7 +54,7 @@ function App() {
                 skip to the content
             </a>
             <div ref={appRef} className="App" data-scroll-container>
-                <Hero />
+                <Hero imgData={imageData.hero} />
             </div>
         </>
     );

@@ -1,11 +1,24 @@
+import { useId, useMemo } from "react";
 import Image from "@ui/Image.jsx";
-import meme from "../assets/images/img/meme.jpg";
 
-function Hero(prop) {
+// todo: fix the image import pug
+
+function Hero({ imgData }) {
+    let imageId = useId();
+
     return (
         <main className="hero">
             <button>test</button>
-            <Image src={meme} alt="meme" hash="L9GicmE#0xRj4Sw|h}Sf^+wJVFs;" />
+            {imgData.map((image) => {
+                return (
+                    <Image
+                        src={image.src}
+                        alt={image.alt}
+                        hash={image.hash}
+                        key={imageId}
+                    />
+                );
+            })}
         </main>
     );
 }
