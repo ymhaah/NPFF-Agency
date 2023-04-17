@@ -1,21 +1,20 @@
 import { useId, useMemo } from "react";
 import Image from "@ui/Image.jsx";
+import { heroImages } from "../assets/images/img/imageDate.jsx";
 
-// todo: fix the image import pug
-
-function Hero({ imgData }) {
-    let imageId = useId();
-
+function Hero() {
     return (
         <main className="hero">
             <button>test</button>
-            {imgData.map((image) => {
+            {heroImages.map((image) => {
                 return (
                     <Image
                         src={image.src}
+                        webp={image.webp}
                         alt={image.alt}
                         hash={image.hash}
-                        key={imageId}
+                        id={image.id}
+                        key={image.key}
                     />
                 );
             })}

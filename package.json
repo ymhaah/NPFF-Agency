@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "blurhash": "^2.0.5",
-    "fontfaceobserver": "^2.3.0",
     "locomotive-scroll": "^4.1.4",
     "react": "^18.2.0",
     "react-blurhash": "^0.3.0",

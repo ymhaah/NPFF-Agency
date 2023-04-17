@@ -1,16 +1,15 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Blurhash } from "react-blurhash";
 
-/*
-// todo: add blurhash
-// todo: make a json file that Contains different images type (WebP, jpg)
-// todo: Make all images have more than one size (phone, tablet, laptop, Monitor)
-// todo: use img srcset and make it work automatically with the json file 
-// todo: use the picture element and make it work automatically with the json file 
-*/
-
-function Image({ alt = "Image from the artist's gallery", src, hash }) {
+function Image({
+    src,
+    webp,
+    hash,
+    id,
+    alt = "Image from the artist's gallery",
+}) {
     const [imgLoaded, setImgLoaded] = useState(false);
+    let images = useRef(null);
 
     return (
         <div className="image">
@@ -23,10 +22,10 @@ function Image({ alt = "Image from the artist's gallery", src, hash }) {
                 <Blurhash hash={hash} />
             </div>
             <picture>
-                <source type="image/webp" srcSet={src.webp} />
+                <source type="image/webp" srcSet={webp} />
                 <img
-                    srcSet={src.jpg}
-                    src={src.main}
+                    ref={images}
+                    src={src}
                     onLoad={() => {
                         setImgLoaded(true);
                     }}
@@ -34,6 +33,7 @@ function Image({ alt = "Image from the artist's gallery", src, hash }) {
                         display: imgLoaded ? "block" : "none",
                     }}
                     alt={alt}
+                    id={id}
                     decoding="async"
                 />
             </picture>
