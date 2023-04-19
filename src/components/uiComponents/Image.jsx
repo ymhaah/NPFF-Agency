@@ -1,13 +1,7 @@
 import { useState, useRef } from "react";
 import { Blurhash } from "react-blurhash";
 
-function Image({
-    src,
-    webp,
-    hash,
-    id,
-    alt = "Image from the artist's gallery",
-}) {
+function Image({ src, webp, hash, id, alt = "" }) {
     const [imgLoaded, setImgLoaded] = useState(false);
     let images = useRef(null);
 

@@ -8,11 +8,11 @@
   --clr-alpha-white: 0 0% 100%;
   --clr-alpha-black: 0 0% 0%;
   --main-dark-clr: var(--clr-dark-gray);
-  --main-light-clr: ;
+  --main-light-clr: var(--clr-tan);
   --accent-clr: ;
 }
 
-.main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul {
+main.hero, main.hero .block .Container, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul {
   display: flex;
 }
 
@@ -20,7 +20,11 @@
   flex-direction: row;
 }
 
-.main-header .header__Container .header__Logo {
+main.hero, main.hero .block .Container {
+  flex-direction: column;
+}
+
+main.hero, main.hero .block .Container, .main-header .header__Container .header__Logo {
   justify-content: center;
 }
 
@@ -28,7 +32,7 @@
   justify-content: space-between;
 }
 
-.main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul {
+main.hero, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul {
   align-items: center;
 }
 
@@ -103,8 +107,8 @@ body {
 
 :where(h1, h2, h3, h4, p, a:not(.Button), .Button, span) {
   margin: 0;
-  text-transform: uppercase;
-  color: var(--txt-clr);
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
 }
 
 :where(h1, h2, h3, h4, p, span):not(:last-child) {
@@ -119,7 +123,7 @@ h1,
 
 h2,
 .h2 {
-  font-size: var(--fs-l);
+  font-size: var(--fs-xxl);
   font-weight: var(--fw-m);
 }
 
@@ -139,6 +143,11 @@ p,
 .p {
   font-size: var(--fs-s);
   font-weight: var(--fw-l);
+}
+
+.sup-text {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-n);
 }
 
 a:not(.Button) {
@@ -247,12 +256,6 @@ body {
   width: 100%;
 }
 
-.App {
-  width: 100vw;
-  height: 200vh;
-  padding: 2rem;
-}
-
 .Container {
   --container-width: 90%;
   height: 100%;
@@ -299,10 +302,6 @@ select {
   font: inherit;
 }
 
-.image {
-  width: 40vw;
-  height: 40vw;
-}
 .image .blur > div {
   width: 100% !important;
   height: 100% !important;
@@ -313,8 +312,8 @@ svg {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 [type=button] {
@@ -531,8 +530,41 @@ html.has-scroll-dragging {
   cursor: pointer;
 }
 
-main.hero .Container {
-  --container-width: 90%;
+main.hero {
+  width: 100vw;
+  height: 100vh;
+}
+main.hero .block {
+  height: 25%;
+  width: 100%;
+  border: 1px solid var(--main-light-clr);
+  position: relative;
+}
+main.hero .block .Container {
+  position: relative;
+}
+main.hero .block .Container h2 {
+  font-size: min(25vh, var(--fs-xxl));
+  line-height: 1;
+  color: var(--main-light-clr);
+}
+main.hero .block .Container .sup-text {
+  position: absolute;
+  top: 1.25rem;
+  left: 75%;
+  color: var(--main-light-clr);
+  font-family: var(--ff-rachel);
+  white-space: nowrap;
+}
+main.hero .block .animated-block {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  isolation: isolate;
+  z-index: -1;
+  background-color: var(--main-dark-clr);
 }
 
 footer {

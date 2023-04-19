@@ -9,9 +9,12 @@ console.log(`Made with 💙 by Youssef Hafnawy: https://twitter.com/hafanwi`);
 /*
 
 // todo: font
-todo: image
+// todo: image
     // todo: plurHash
     // todo: image opt
+todo: hero
+    // todo: hero images
+
 
 */
 
@@ -31,18 +34,9 @@ function App() {
     }, []);
 
     return (
-        <>
-            <a
-                href=""
-                className="visually-hidden"
-                title="click Enter to skip navigation menu"
-            >
-                skip to the content
-            </a>
-            <div ref={appRef} className="App" data-scroll-container>
-                <Hero />
-            </div>
-        </>
+        <div ref={appRef} className="App" data-scroll-container>
+            <Hero />
+        </div>
     );
 }
 

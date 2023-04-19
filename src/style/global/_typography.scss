@@ -94,9 +94,8 @@ body {
 
 :where(h1, h2, h3, h4, p, a:not(.Button), .Button, span) {
     margin: 0;
-    text-transform: uppercase;
-    // letter-spacing: #{toRem(2px)};
-    color: var(--txt-clr);
+    text-transform: capitalize;
+    letter-spacing: #{toRem(4px)};
 }
 :where(h1, h2, h3, h4, p, span):not(:last-child) {
     margin: 0 0 1rem 0;
@@ -108,7 +107,7 @@ h1,
 }
 h2,
 .h2 {
-    font-size: var(--fs-l);
+    font-size: var(--fs-xxl);
     font-weight: var(--fw-m);
 }
 h3,
@@ -125,6 +124,10 @@ p,
 .p {
     font-size: var(--fs-s);
     font-weight: var(--fw-l);
+}
+.sup-text {
+    font-size: var(--fs-200);
+    font-weight: var(--fw-n);
 }
 a:not(.Button) {
     font-size: var(--fs-s);
