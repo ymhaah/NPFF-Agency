@@ -26,16 +26,17 @@ todo: hero
 function App() {
     let appRef = useRef(null);
 
-    useEffect(() => {
-        const scroll = new LocomotiveScroll({
-            el: appRef.current,
-            smooth: true,
-        });
-    }, []);
+    // useEffect(() => {
+    //     const scroll = new LocomotiveScroll({
+    //         el: appRef.current,
+    //         smooth: true,
+    //     });
+    // }, []);
 
     return (
         <div ref={appRef} className="App" data-scroll-container>
             <Hero />
+            <div className="work"></div>
         </div>
     );
 }

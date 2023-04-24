@@ -2,7 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- ################################ -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:image" content="" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="" />
+        <meta property="og:title" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <!-- ################################ -->
         <meta name="description" content="description" />
         <meta name="author" content="Youssef Hafnawi" />
         <meta name="color-scheme" content="light" />
@@ -23,16 +38,27 @@
 			defer
 		></script> -->
 
-        <!--? ################ Fonts ################ -->
-
         <!--? ################ style ################ -->
         <!-- <link rel="stylesheet" href="./src/index.css" /> -->
     </head>
     <body>
         <div react-root="main-root"></div>
 
-        <!--? my scripts -->
+        <!--? scripts -->
+        <noscript>
+            <div class="no-script">
+                <p>Please enable JavaScript to view this website.</p>
+            </div>
+        </noscript>
+        <script nomodule="">
+            var div = document.createElement("div");
+            var p = document.createElement("P");
+            div.classList.add("old-script");
+            p.textContent =
+                "Please update your browser to modern version to view this website.";
+            div.appendChild(p);
+            document.body.appendChild(div);
+        </script>
         <script type="module" src="./src/main.jsx"></script>
-        <!-- <script type="module" src="./src/utils/main.js"></script> -->
     </body>
 </html>

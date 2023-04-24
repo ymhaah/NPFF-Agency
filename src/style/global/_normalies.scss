@@ -7,7 +7,7 @@
 // @include grid(2, 2, fr, 1rem)
 
 :root {
-    --border-radius: #{toRem(10px)};
+    --border-radius: #{toRem(8px)};
 }
 
 *,
@@ -109,6 +109,8 @@ svg {
     user-select: none;
     max-width: 100%;
     height: auto;
+    object-fit: cover;
+    object-position: center;
     // display: block;
 }
 [type="button"] {
@@ -163,6 +165,26 @@ svg {
     clip: rect(0, 0, 0, 0) !important;
     white-space: nowrap !important;
     border: 0 !important;
+}
+.old-script,
+.no-script {
+    width: 100vw;
+    height: 100vh;
+    @include flex(r, c, c);
+    z-index: 9999;
+    position: fixed;
+    padding: 0 1rem;
+    text-align: center;
+    background-color: #1c1e21;
+    color: #d9d4ce;
+    & > p {
+        font-size: 18px;
+        color: #d9d4ce;
+    }
+}
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
 }
 .accent-X-clr {
     --accent-clr: var(--accent-X-clr);

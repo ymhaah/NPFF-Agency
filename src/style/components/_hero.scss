@@ -8,41 +8,32 @@
 // todo: copy the hero with a spin of your own
 
 main.hero {
-    width: 100vw;
-    height: 100vh;
-    @include flex(c, c, c);
-    .block {
-        height: 25%;
-        width: 100%;
-        border: 1px solid var(--main-light-clr);
-        // overflow: hidden;
-        position: relative;
-        .Container {
-            position: relative;
-            @include flex(c, c, n);
-            h2 {
-                font-size: min(25vh, var(--fs-xxl));
-                line-height: 1;
-                color: var(--main-light-clr);
-            }
-            .sup-text {
-                position: absolute;
-                top: 1.25rem;
-                left: 75%;
-                color: var(--main-light-clr);
-                font-family: var(--ff-rachel);
-                white-space: nowrap;
-            }
-        }
-        .animated-block {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            isolation: isolate;
-            z-index: -1;
+    position: relative;
+    .container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        @include flex(r, c, c);
+        .Gallery {
             background-color: var(--main-dark-clr);
+            .row {
+                @include flex(r, c, c);
+            }
+            .Gallery-image {
+                width: 100vw;
+                height: 100vh;
+                margin: 2.5rem;
+                background-color: var(--main-light-clr);
+            }
+            .main-image {
+                // background-color: red;
+            }
         }
     }
+}
+
+.work {
+    width: 100vw;
+    height: 200vh;
+    // background-color: red;
 }

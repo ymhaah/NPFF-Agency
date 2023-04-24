@@ -12,19 +12,18 @@
   --accent-clr: ;
 }
 
-main.hero, main.hero .block .Container, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul {
+main.hero .container, main.hero .container .Gallery .row, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .old-script,
+.no-script {
   display: flex;
 }
 
-.main-header .header__Container, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul {
+main.hero .container, main.hero .container .Gallery .row, .main-header .header__Container, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .old-script,
+.no-script {
   flex-direction: row;
 }
 
-main.hero, main.hero .block .Container {
-  flex-direction: column;
-}
-
-main.hero, main.hero .block .Container, .main-header .header__Container .header__Logo {
+main.hero .container, main.hero .container .Gallery .row, .main-header .header__Container .header__Logo, .old-script,
+.no-script {
   justify-content: center;
 }
 
@@ -32,10 +31,20 @@ main.hero, main.hero .block .Container, .main-header .header__Container .header_
   justify-content: space-between;
 }
 
-main.hero, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul {
+main.hero .container, main.hero .container .Gallery .row, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .old-script,
+.no-script {
   align-items: center;
 }
 
+/*
+Basic system font stacks
+Sans-serif
+font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+Serif
+font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+Mono
+font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+*/
 @font-face {
   font-family: "Rachel";
   font-weight: 400;
@@ -79,8 +88,12 @@ main.hero, .main-header .header__Container, .main-header .header__Container .hea
   src: url("./assets/fonts/Mosk/Ultra-Bold_900.woff2") format("woff2"), url("./assets/fonts/Mosk/Ultra-Bold_900.woff") format("woff"), url("./assets/fonts/Mosk/Ultra-Bold_900.ttf") format("truetype");
 }
 :root {
-  --ff-mosk: "Mosk", sans-serif;
-  --ff-rachel: "Rachel", serif;
+  --ff-mosk: "Mosk", -apple-system, BlinkMacSystemFont, avenir next, avenir,
+      segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+      arial, sans-serif;
+  --ff-rachel: "Rachel", Iowan Old Style, Apple Garamond, Baskerville,
+      Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+      Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   --fs-100: clamp(1.125rem, 1.0625rem + 0.2083333333vw, 1.25rem);
   --fs-200: clamp(1.375rem, 1.1875rem + 0.625vw, 1.75rem);
   --fs-300: clamp(1.5rem, 1.25rem + 0.8333333333vw, 2rem);
@@ -229,7 +242,7 @@ a:not(.Button) {
 }
 
 :root {
-  --border-radius: 0.625rem;
+  --border-radius: 0.5rem;
 }
 
 *,
@@ -314,6 +327,10 @@ svg {
           user-select: none;
   max-width: 100%;
   height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 [type=button] {
@@ -371,6 +388,28 @@ svg {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+.old-script,
+.no-script {
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  position: fixed;
+  padding: 0 1rem;
+  text-align: center;
+  background-color: #1c1e21;
+  color: #d9d4ce;
+}
+.old-script > p,
+.no-script > p {
+  font-size: 18px;
+  color: #d9d4ce;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
 }
 
 .accent-X-clr {
@@ -531,40 +570,25 @@ html.has-scroll-dragging {
 }
 
 main.hero {
+  position: relative;
+}
+main.hero .container {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
-main.hero .block {
-  height: 25%;
-  width: 100%;
-  border: 1px solid var(--main-light-clr);
-  position: relative;
-}
-main.hero .block .Container {
-  position: relative;
-}
-main.hero .block .Container h2 {
-  font-size: min(25vh, var(--fs-xxl));
-  line-height: 1;
-  color: var(--main-light-clr);
-}
-main.hero .block .Container .sup-text {
-  position: absolute;
-  top: 1.25rem;
-  left: 75%;
-  color: var(--main-light-clr);
-  font-family: var(--ff-rachel);
-  white-space: nowrap;
-}
-main.hero .block .animated-block {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  isolation: isolate;
-  z-index: -1;
+main.hero .container .Gallery {
   background-color: var(--main-dark-clr);
+}
+main.hero .container .Gallery .Gallery-image {
+  width: 100vw;
+  height: 100vh;
+  margin: 2.5rem;
+  background-color: var(--main-light-clr);
+}
+.work {
+  width: 100vw;
+  height: 200vh;
 }
 
 footer {

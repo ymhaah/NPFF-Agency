@@ -1,6 +1,16 @@
 @use "./colors.scss" as *;
 @use "../util/index" as *;
 
+/*
+Basic system font stacks
+Sans-serif
+font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+Serif
+font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+Mono
+font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+*/
+
 // ! font file path is made to match the path from the css file not from the sass file
 // ! Rachel => serif
 @font-face {
@@ -61,8 +71,12 @@
 
 :root {
     // font families
-    --ff-mosk: "Mosk", sans-serif;
-    --ff-rachel: "Rachel", serif;
+    --ff-mosk: "Mosk", -apple-system, BlinkMacSystemFont, avenir next, avenir,
+        segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+        arial, sans-serif;
+    --ff-rachel: "Rachel", Iowan Old Style, Apple Garamond, Baskerville,
+        Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+        Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
     // font sizes
     --fs-100: #{ClampCalc(18px, 20px)};
