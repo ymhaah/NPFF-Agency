@@ -7,6 +7,7 @@
         "paths": {
             "@ui/*": ["./src/components/uiComponents/*"],
             "@comp/*": ["./src/components/*"]
+            // "@img/*": ["./src/assets/images/img/*"]
         }
     },
     "include": ["src"],

@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Blurhash } from "react-blurhash";
 
-function Image({ src, webp, hash, id, alt = "" }) {
+function Image({ src, webp, hash, id, loaded = () => {}, alt = "" }) {
     const [imgLoaded, setImgLoaded] = useState(false);
     let images = useRef(null);
 
@@ -12,6 +12,7 @@ function Image({ src, webp, hash, id, alt = "" }) {
                 style={{
                     display: !imgLoaded ? "inline" : "none",
                 }}
+                aria-hidden={imgLoaded}
             >
                 <Blurhash hash={hash} />
             </div>
@@ -22,6 +23,7 @@ function Image({ src, webp, hash, id, alt = "" }) {
                     src={src}
                     onLoad={() => {
                         setImgLoaded(true);
+                        loaded({ loaded: true, src: src });
                     }}
                     style={{
                         display: imgLoaded ? "block" : "none",

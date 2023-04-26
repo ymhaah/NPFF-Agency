@@ -2,8 +2,6 @@ import { useState, useEffect, useRef, useMemo } from "react";
 
 import Hero from "@comp/Hero.jsx";
 
-import LocomotiveScroll from "locomotive-scroll";
-
 console.log(`Made with 💙 by Youssef Hafnawy: https://twitter.com/hafanwi`);
 // console.warn("the min dimensions is 4");
 /*
@@ -25,17 +23,28 @@ todo: hero
 
 function App() {
     let appRef = useRef(null);
+    let [heroLoaded, setHeroLoaded] = useState(false);
+    let heroDelay = 1000;
 
-    // useEffect(() => {
-    //     const scroll = new LocomotiveScroll({
-    //         el: appRef.current,
-    //         smooth: true,
-    //     });
-    // }, []);
-
+    function heroLoad() {
+        setTimeout(() => {
+            setHeroLoaded(true);
+        }, heroDelay);
+    }
     return (
-        <div ref={appRef} className="App" data-scroll-container>
-            <Hero />
+        <div ref={appRef} className="App">
+            <div
+                className="Loading"
+                style={{
+                    display: !heroLoaded ? "block" : "none",
+                }}
+                aria-label={
+                    !heroLoaded ? "website is loading" : "website loaded"
+                }
+                aria-hidden={heroLoaded}
+            ></div>
+            <Hero heroLoad={heroLoad} heroDelay={heroDelay} />
+
             <div className="work"></div>
         </div>
     );

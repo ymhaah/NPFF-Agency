@@ -28,6 +28,7 @@ html:focus-within {
 body {
     margin: 0;
     padding: 0;
+    position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -35,6 +36,7 @@ html,
 body {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
     // background-color: var(--bg-clr);
 }
 .App {
@@ -102,6 +104,10 @@ select {
         canvas {
         }
     }
+    picture {
+        img {
+        }
+    }
 }
 img,
 picture,
@@ -111,7 +117,6 @@ svg {
     height: auto;
     object-fit: cover;
     object-position: center;
-    // display: block;
 }
 [type="button"] {
     user-select: none;
@@ -166,6 +171,16 @@ svg {
     white-space: nowrap !important;
     border: 0 !important;
 }
+.Loading {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--main-dark-clr);
+    z-index: 1000;
+}
+
 .old-script,
 .no-script {
     width: 100vw;
