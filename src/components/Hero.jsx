@@ -26,36 +26,46 @@ function Hero({ heroLoad, heroDelay }) {
     }
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
-            let duration = 1;
-            let delay = 1 + heroDelay / 1000;
+            let gallery = document.querySelector(".Gallery");
+            let container = document.querySelector(".container");
+            let containerProps = container.getBoundingClientRect();
+            let galleryProps = gallery.getBoundingClientRect();
 
-            if (
-                images.length === imagesLoaded.length &&
-                imagesLoaded.every((imageLoaded) => {
-                    return imageLoaded.loaded == true;
-                })
-            ) {
-                heroLoad();
-                // gsap.to(".Gallery", {
-                //     duration: duration,
-                //     delay: delay,
-                //     scale: 0.4,
-                //     y: "-2%",
-                //     x: "-3%",
-                //     onStart: () => {
-                //         document
-                //             .querySelector(".container")
-                //             .classList.add("fixed");
-                //         document.body.classList.add("stop-scrolling");
-                //     },
-                //     onComplete: () => {
-                //         document
-                //             .querySelector(".container")
-                //             .classList.remove("fixed");
-                //         document.body.classList.remove("stop-scrolling");
-                //     },
-                // });
-            }
+            let hight = containerProps.height / 2 - galleryProps.height / 2;
+
+            gallery.style.setProperty("--gallery-hight", hight + "px");
+
+            let animateDuration = "1s";
+            // let delay = 1 + heroDelay / 1000;
+            let animateDelay = "1s";
+
+            gsap.to(".animation", {
+                duration: animateDuration,
+                delay: animateDelay,
+                scale: 0.4,
+                // y: "-2%",
+                // x: "-3%",
+                // onStart: () => {
+                //     document.querySelector(".container").classList.add("fixed");
+                //     document.body.classList.add("stop-scrolling");
+                // },
+                // onComplete: () => {
+                //     document
+                //         .querySelector(".container")
+                //         .classList.remove("fixed");
+                //     document.body.classList.remove("stop-scrolling");
+                // },
+            });
+
+            // if (
+            //     images.length === imagesLoaded.length &&
+            //     imagesLoaded.every((imageLoaded) => {
+            //         return imageLoaded.loaded == true;
+            //     })
+            // ) {
+            //     // heroLoad();
+
+            // }
         }, hero);
         return () => ctx.revert();
     }, [images.length === imagesLoaded.length]);
@@ -67,14 +77,14 @@ function Hero({ heroLoad, heroDelay }) {
                     {images.map((image) => {
                         return (
                             <div className="Gallery-image" key={image.key}>
-                                <Image
+                                {/* <Image
                                     loaded={allImageLoaded}
                                     src={image.src}
                                     webp={image.webp}
                                     alt={image.alt}
                                     hash={image.hash}
                                     id={image.id}
-                                />
+                                /> */}
                             </div>
                         );
                     })}

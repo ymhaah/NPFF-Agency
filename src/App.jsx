@@ -33,7 +33,7 @@ function App() {
     }
     return (
         <div ref={appRef} className="App">
-            <div
+            {/* <div
                 className="Loading"
                 style={{
                     display: !heroLoaded ? "block" : "none",
@@ -42,7 +42,7 @@ function App() {
                     !heroLoaded ? "website is loading" : "website loaded"
                 }
                 aria-hidden={heroLoaded}
-            ></div>
+            ></div> */}
             <Hero heroLoad={heroLoad} heroDelay={heroDelay} />
 
             <div className="work"></div>

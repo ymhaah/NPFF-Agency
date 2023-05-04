@@ -20,6 +20,7 @@
 html,
 html:focus-within {
     scroll-behavior: smooth;
+    text-size-adjust: none;
     // scroll-snap-type: mandatory;
     // scroll-snap-type: y mandatory;
     // scroll-snap-stop: always;
@@ -28,6 +29,7 @@ html:focus-within {
 body {
     margin: 0;
     padding: 0;
+    overscroll-behavior: contain;
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -112,11 +114,13 @@ select {
 img,
 picture,
 svg {
-    user-select: none;
     max-width: 100%;
     height: auto;
+    user-select: none;
     object-fit: cover;
     object-position: center;
+    box-shadow: none;
+    pointer-events: none;
 }
 [type="button"] {
     user-select: none;
@@ -197,7 +201,7 @@ svg {
         color: #d9d4ce;
     }
 }
-.stop-scrolling {
+.no-scroll {
     height: 100%;
     overflow: hidden;
 }
