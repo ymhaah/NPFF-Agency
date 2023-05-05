@@ -73,23 +73,38 @@ function Hero({ heroLoad, heroDelay }) {
     return (
         <main className="hero" ref={hero}>
             <div className="container">
+                <div className="r1_l"></div>
+                <div className="r2_l2"></div>
+                <div className="r2_l1"></div>
+                <div className="r1_m"></div>
+                <div className="r1_r"></div>
+                <div className="r2_m"></div>
+                <div className="r2_r"></div>
+                <div className="r3_m2"></div>
+                <div className="r3_r"></div>
+                <div className="r3_l"></div>
+                <div className="r3_m1"></div>
+                <div className="r11_r"></div>
+                <div className="r33_l"></div>
+            </div>
+            {/* <div className="container">
                 <div className="Gallery">
                     {images.map((image) => {
                         return (
                             <div className="Gallery-image" key={image.key}>
-                                {/* <Image
+                                <Image
                                     loaded={allImageLoaded}
                                     src={image.src}
                                     webp={image.webp}
                                     alt={image.alt}
                                     hash={image.hash}
                                     id={image.id}
-                                /> */}
+                                />
                             </div>
                         );
                     })}
                 </div>
-            </div>
+            </div> */}
         </main>
     );
 }

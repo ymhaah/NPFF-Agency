@@ -13,6 +13,76 @@
         todo: the button component with react hot tost library
 */
 
+.container {
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    gap: 16px 16px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "r1_l r1_l r1_l r1_l r1_l r1_l r1_m r1_m r1_m r1_m r1_m r1_m r1_m r1_r r1_r r1_r r1_r r1_r r1_r"
+        "r1_l r1_l r1_l r1_l r1_l r1_l r1_m r1_m r1_m r1_m r1_m r1_m r1_m r1_r r1_r r1_r r1_r r1_r r1_r"
+        "r2_l1 r2_l1 r2_l2 r2_l2 r2_l2 r2_l2 r1_m r1_m r1_m r1_m r1_m r1_m r1_m r11_r r11_r r11_r r11_r r11_r r11_r"
+        "r2_l1 r2_l1 r2_l2 r2_l2 r2_l2 r2_l2 r2_m r2_m r2_m r2_m r2_m r2_m r2_m r2_m r2_m r2_r r2_r r2_r r2_r"
+        "r2_l1 r2_l1 r2_l2 r2_l2 r2_l2 r2_l2 r2_m r2_m r2_m r2_m r2_m r2_m r2_m r2_m r2_m r2_r r2_r r2_r r2_r"
+        "r2_l1 r2_l1 r2_l2 r2_l2 r2_l2 r2_l2 r2_m r2_m r2_m r2_m r2_m r2_m r2_m r2_m r2_m r2_r r2_r r2_r r2_r"
+        "r3_l r3_l r3_l r3_l r3_l r3_l r3_m1 r3_m1 r3_m1 r3_m1 r3_m2 r3_m2 r3_m2 r3_m2 r3_m2 r2_r r2_r r2_r r2_r"
+        "r3_l r3_l r3_l r3_l r3_l r3_l r3_m1 r3_m1 r3_m1 r3_m1 r3_m2 r3_m2 r3_m2 r3_m2 r3_m2 r3_r r3_r r3_r r3_r"
+        "r33_l r33_l r33_l r33_l r33_l r33_l r33_l r33_l r33_l r33_l r3_m2 r3_m2 r3_m2 r3_m2 r3_m2 r3_r r3_r r3_r r3_r";
+}
+
+.r1_l {
+    grid-area: r1_l;
+}
+
+.r2_l2 {
+    grid-area: r2_l2;
+}
+
+.r2_l1 {
+    grid-area: r2_l1;
+}
+
+.r1_m {
+    grid-area: r1_m;
+}
+
+.r1_r {
+    grid-area: r1_r;
+}
+
+.r2_m {
+    grid-area: r2_m;
+}
+
+.r2_r {
+    grid-area: r2_r;
+}
+
+.r3_m2 {
+    grid-area: r3_m2;
+}
+
+.r3_r {
+    grid-area: r3_r;
+}
+
+.r3_l {
+    grid-area: r3_l;
+}
+
+.r3_m1 {
+    grid-area: r3_m1;
+}
+
+.r11_r {
+    grid-area: r11_r;
+}
+
+.r33_l {
+    grid-area: r33_l;
+}
+
 main.hero {
     width: 100vw;
     height: 100vh;
