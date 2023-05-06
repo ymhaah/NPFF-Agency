@@ -26,37 +26,33 @@ function Hero({ heroLoad, heroDelay }) {
     }
     useLayoutEffect(() => {
         let ctx = gsap.context(() => {
-            let gallery = document.querySelector(".Gallery");
-            let container = document.querySelector(".container");
-            let containerProps = container.getBoundingClientRect();
-            let galleryProps = gallery.getBoundingClientRect();
+            // let gallery = document.querySelector(".Gallery");
+            // let container = document.querySelector(".container");
+            // let containerProps = container.getBoundingClientRect();
+            // let galleryProps = gallery.getBoundingClientRect();
+            // let hight = containerProps.height / 2 - galleryProps.height / 2;
+            // gallery.style.setProperty("--gallery-hight", hight + "px");
 
-            let hight = containerProps.height / 2 - galleryProps.height / 2;
-
-            gallery.style.setProperty("--gallery-hight", hight + "px");
-
-            let animateDuration = "1s";
+            let animateDuration = 1;
             // let delay = 1 + heroDelay / 1000;
-            let animateDelay = "1s";
-
-            gsap.to(".animation", {
-                duration: animateDuration,
-                delay: animateDelay,
-                scale: 0.4,
-                // y: "-2%",
-                // x: "-3%",
-                // onStart: () => {
-                //     document.querySelector(".container").classList.add("fixed");
-                //     document.body.classList.add("stop-scrolling");
-                // },
-                // onComplete: () => {
-                //     document
-                //         .querySelector(".container")
-                //         .classList.remove("fixed");
-                //     document.body.classList.remove("stop-scrolling");
-                // },
-            });
-
+            let animateDelay = 1;
+            // gsap.to(".Gallery", {
+            //     duration: animateDuration,
+            //     delay: animateDelay,
+            //     scale: 0.5,
+            //     y: "-3%",
+            //     x: "-1%",
+            //     // onStart: () => {
+            //     //     document.querySelector(".container").classList.add("fixed");
+            //     //     document.body.classList.add("stop-scrolling");
+            //     // },
+            //     // onComplete: () => {
+            //     //     document
+            //     //         .querySelector(".container")
+            //     //         .classList.remove("fixed");
+            //     //     document.body.classList.remove("stop-scrolling");
+            //     // },
+            // });
             // if (
             //     images.length === imagesLoaded.length &&
             //     imagesLoaded.every((imageLoaded) => {
@@ -64,7 +60,6 @@ function Hero({ heroLoad, heroDelay }) {
             //     })
             // ) {
             //     // heroLoad();
-
             // }
         }, hero);
         return () => ctx.revert();
@@ -73,20 +68,9 @@ function Hero({ heroLoad, heroDelay }) {
     return (
         <main className="hero" ref={hero}>
             <div className="container">
-                <div className="r1_l"></div>
-                <div className="r2_l2"></div>
-                <div className="r2_l1"></div>
-                <div className="r1_m"></div>
-                <div className="r1_r"></div>
-                <div className="r2_m"></div>
-                <div className="r2_r"></div>
-                <div className="r3_m2"></div>
-                <div className="r3_r"></div>
-                <div className="r3_l"></div>
-                <div className="r3_m1"></div>
-                <div className="r11_r"></div>
-                <div className="r33_l"></div>
+                <div className="Gallery"></div>
             </div>
+
             {/* <div className="container">
                 <div className="Gallery">
                     {images.map((image) => {

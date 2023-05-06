@@ -425,11 +425,6 @@ svg {
   color: #d9d4ce;
 }
 
-.no-scroll {
-  height: 100%;
-  overflow: hidden;
-}
-
 .accent-X-clr {
   --accent-clr: var(--accent-X-clr);
   --accent-shadow-clr: var(--clr-teal-blue-500);
@@ -508,40 +503,25 @@ main.hero {
 main.hero .container {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 main.hero .container .Gallery {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, var(--gallery-hight, 0));
-  background-color: var(--main-dark-clr);
-}
-main.hero .container .Gallery .Gallery-image {
   width: 100vw;
   height: 100vh;
-  margin: 2.5rem;
+  background-color: var(--main-dark-clr);
+}
+main.hero .container .Gallery .gallery_image {
   background-color: var(--main-light-clr);
   backface-visibility: hidden;
   overflow: hidden;
   z-index: 1000;
-}
-main.hero .container .Gallery .Gallery-image .image {
-  width: 100%;
-  height: 100%;
-}
-main.hero .container .Gallery .Gallery-image .image img {
-  width: 100%;
-  height: 100%;
-  background-position: center;
-}
-.fixed {
-  position: fixed !important;
+  background-color: black;
+  border: 3px solid red;
 }
 
 .work {
   width: 100vw;
-  height: 200vh;
-  background-color: red;
+  height: 300vh;
 }
 
 footer {
