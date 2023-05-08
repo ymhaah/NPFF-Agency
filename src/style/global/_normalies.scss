@@ -36,9 +36,8 @@ body {
 }
 html,
 body {
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden;
+    max-width: 100%;
+    // overflow-x: hidden;
     // background-color: var(--bg-clr);
 }
 .App {
