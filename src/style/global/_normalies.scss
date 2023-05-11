@@ -7,7 +7,7 @@
 // @include grid(2, 2, fr, 1rem);
 
 :root {
-    --border-radius: #{toRem(8px)};
+    --border-radius: #{toRem(1px)};
 }
 
 *,
@@ -114,6 +114,7 @@ img,
 picture,
 svg {
     max-width: 100%;
+    display: block;
     height: auto;
     user-select: none;
     object-fit: cover;
