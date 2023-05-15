@@ -28,6 +28,11 @@
 // For laptop, S-Monitor
 
 @media screen and (max-width: #{toEm(768px)}) {
+    .loader {
+        .Container {
+            --container-width: calc(100% - 3rem);
+        }
+    }
     .c-scrollbar {
         display: none;
     }
@@ -171,9 +176,10 @@
 // 		scroll-snap-points-y: repeat(100vh);
 // 	}
 // }
-@supports (height: 100svh) {
-    main.hero {
-        height: 100svh;
+@supports (height: 100dvh) {
+    main.hero,
+    .loader {
+        height: 100dvh;
     }
 }
 @supports (aspect-ratio: 1 / 1) {

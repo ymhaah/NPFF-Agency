@@ -6,6 +6,7 @@ let heroImages = [
         key: crypto.randomUUID(),
         id: "H1",
         hash: "LD8=1uH=4T?wR4o#tmV?00%h.8D$",
+        loaded: undefined,
         shoutOut: "Unsplash/jordy_munoz",
     },
     {
@@ -15,6 +16,7 @@ let heroImages = [
         key: crypto.randomUUID(),
         id: "H2",
         hash: "LPC6T9enNFMx~XV@WAMxXmIoofM{",
+        loaded: undefined,
         shoutOut: "Unsplash/chi_lok_tsang",
     },
     {
@@ -24,6 +26,7 @@ let heroImages = [
         key: crypto.randomUUID(),
         id: "H3",
         hash: "LA7x2P%MD%4n~qxuIU9F%Mj]axD%",
+        loaded: undefined,
         shoutOut: "Unsplash/amritansh_dubey",
     },
     {
@@ -33,6 +36,7 @@ let heroImages = [
         key: crypto.randomUUID(),
         id: "H4",
         hash: "LRGv3LS5M|R%~qWVD%oe%Nj]M{t7",
+        loaded: undefined,
         shoutOut: "Unsplash/chi_lok_tsang",
     },
     {
@@ -42,6 +46,7 @@ let heroImages = [
         key: crypto.randomUUID(),
         id: "H5",
         hash: "LLCj2}n+4TyD?^s:H?o}0#t8%1RQ",
+        loaded: undefined,
         shoutOut: "Unsplash/rafael_hoyos_weht",
     },
 ];

@@ -12,12 +12,12 @@
   --accent-clr: ;
 }
 
-main.hero .container .gallery, main.hero .container .gallery .coll, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .old-script,
+main.hero .container .gallery, main.hero .container .gallery .coll, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .loader .Container, .loader .Container .loading-par, .old-script,
 .no-script {
   display: flex;
 }
 
-main.hero .container .gallery, .main-header .header__Container, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .old-script,
+main.hero .container .gallery, .main-header .header__Container, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .loader .Container, .loader .Container .loading-par, .old-script,
 .no-script {
   flex-direction: row;
 }
@@ -26,7 +26,7 @@ main.hero .container .gallery .coll {
   flex-direction: column;
 }
 
-main.hero .container .gallery, main.hero .container .gallery .coll, .main-header .header__Container .header__Logo, .old-script,
+main.hero .container .gallery, main.hero .container .gallery .coll, .main-header .header__Container .header__Logo, .loader .Container, .loader .Container .loading-par, .old-script,
 .no-script {
   justify-content: center;
 }
@@ -35,7 +35,7 @@ main.hero .container .gallery, main.hero .container .gallery .coll, .main-header
   justify-content: space-between;
 }
 
-main.hero .container .gallery, main.hero .container .gallery .coll, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .old-script,
+main.hero .container .gallery, main.hero .container .gallery .coll, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .loader .Container, .loader .Container .loading-par, .old-script,
 .no-script {
   align-items: center;
 }
@@ -278,7 +278,7 @@ body {
 }
 
 .Container {
-  --container-width: 90%;
+  --container-width: 75%;
   height: 100%;
   width: var(--container-width, 90%);
   margin-inline: auto;
@@ -401,14 +401,46 @@ svg {
   border: 0 !important;
 }
 
-.Loading {
-  width: 100vw;
+.loader {
+  width: 100%;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--main-dark-clr);
+  background-color: var(--main-light-clr);
   z-index: 1000;
+}
+.loader .Container {
+  --container-width: 50%;
+  text-align: center;
+}
+.loader .Container p {
+  margin: 0;
+}
+.loader .Container .loading-par {
+  width: 50%;
+  height: 0.4375rem;
+  gap: 0.25rem;
+  margin: 1rem;
+}
+.loader .Container .loading-par .skeleton {
+  height: 100%;
+  width: 25%;
+}
+.loader .Container .loading-par .skeleton span {
+  display: block;
+  height: 100%;
+  width: 0;
+  margin: 0;
+  border-radius: calc(var(--border-radius) * 2);
+  background-color: var(--main-dark-clr);
+}
+
+.loader > span {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: var(--main-dark-clr);
 }
 
 .old-script,
@@ -426,6 +458,11 @@ svg {
 .no-script > p {
   font-size: 18px;
   color: #d9d4ce;
+}
+
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
 }
 
 .accent-X-clr {
@@ -589,6 +626,9 @@ footer .mine p a {
 }
 
 @media screen and (max-width: 48em) {
+  .loader .Container {
+    --container-width: calc(100% - 3rem);
+  }
   .c-scrollbar {
     display: none;
   }
@@ -656,9 +696,10 @@ footer .mine p a {
   }
 }
 /*For tablets */
-@supports (height: 100svh) {
-  main.hero {
-    height: 100svh;
+@supports (height: 100dvh) {
+  main.hero,
+  .loader {
+    height: 100dvh;
   }
 }
 /* For people who have motion sickness. */

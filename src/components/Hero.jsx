@@ -14,11 +14,15 @@ todo: hero animation
 */
 
 gsap.registerPlugin(ScrollTrigger);
-function Hero({ heroLoad, heroDelay }) {
+function Hero({ heroStart }) {
     let [images, setImages] = useState(heroImages);
     let [imagesLoaded, setImagesLoaded] = useState([]);
     let hero = useRef(null);
     let tl = useRef();
+
+    if (heroStart) {
+        console.log("start");
+    }
 
     function allImageLoaded({ loaded, src }) {
         setImagesLoaded((prevImagesLoaded) => {
@@ -34,27 +38,27 @@ function Hero({ heroLoad, heroDelay }) {
             let animateDuration = 1;
             let animateDelay = 1;
 
-            tl.current
-                .to(".c1", {
-                    duration: 1,
-                    delay: animateDelay,
-                    y: "10%",
-                })
-                .to(
-                    ".c1 .gallery_image",
-                    {
-                        duration: 0.5,
-                        // delay: animateDelay,
-                        // stagger: 0.2,
-                        scale: 0.85,
-                    },
-                    "<"
-                )
-                .to(".c1 .gallery_image", {
-                    duration: 0.5,
-                    // stagger: 0.2,
-                    scale: 1,
-                });
+            // tl.current
+            //     .to(".c1", {
+            //         duration: 1,
+            //         delay: animateDelay,
+            //         y: "10%",
+            //     })
+            //     .to(
+            //         ".c1 .gallery_image",
+            //         {
+            //             duration: 0.5,
+            //             // delay: animateDelay,
+            //             // stagger: 0.2,
+            //             scale: 0.85,
+            //         },
+            //         "<"
+            //     )
+            //     .to(".c1 .gallery_image", {
+            //         duration: 0.5,
+            //         // stagger: 0.2,
+            //         scale: 1,
+            //     });
 
             // gsap.to(".i7", {
             //     duration: animateDuration,
@@ -84,10 +88,10 @@ function Hero({ heroLoad, heroDelay }) {
     }, []);
 
     return (
-        <main className="hero" ref={hero}>
+        <main className="hero" ref={hero} aria-busy={heroStart ? true : false}>
             <div className="container">
                 <div className="gallery">
-                    <div className="c1 coll">
+                    {/* <div className="c1 coll">
                         <div className="gallery_image image-s"></div>
                         <div className="gallery_image image-xl"></div>
                         <div className="gallery_image image-l"></div>
@@ -119,14 +123,14 @@ function Hero({ heroLoad, heroDelay }) {
                     </div>
                     <div className="c4 coll">
                         <div className="gallery_image image-m"></div>
-                        <div className="gallery_image"></div>
+                        <div className="gallery_image image-xl"></div>
                         <div className="gallery_image image-m"></div>
                         <div className="gallery_image image-l"></div>
-                        <div className="gallery_image"></div>
+                        <div className="gallery_image image-s"></div>
                         <div className="gallery_image image-m"></div>
                         <div className="gallery_image image-l"></div>
                         <div className="gallery_image image-m"></div>
-                    </div>
+                    </div> */}
 
                     {/* {images.map((image) => {
                         return (

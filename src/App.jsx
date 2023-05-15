@@ -1,5 +1,12 @@
-import { useState, useEffect, useRef, useMemo } from "react";
-
+import {
+    useState,
+    useEffect,
+    useRef,
+    useMemo,
+    useContext,
+    createContext,
+} from "react";
+import Loader from "@comp/Loader.jsx";
 import Hero from "@comp/Hero.jsx";
 
 console.log(`Made with 💙 by Youssef Hafnawy: https://twitter.com/hafanwi`);
@@ -23,27 +30,22 @@ todo: hero
 
 function App() {
     let appRef = useRef(null);
-    let [heroLoaded, setHeroLoaded] = useState(false);
-    let heroDelay = 1000;
+    let [heroLoaded, setHeroLoaded] = useState({
+        c1: true,
+        c2: true,
+        c3: true,
+        c4: true,
+    });
+    let [heroStart, setHeroStart] = useState(false);
 
-    function heroLoad() {
-        setTimeout(() => {
-            setHeroLoaded(true);
-        }, heroDelay);
-    }
     return (
         <div ref={appRef} className="App">
-            {/* <div
-                className="Loading"
-                style={{
-                    display: !heroLoaded ? "block" : "none",
-                }}
-                aria-label={
-                    !heroLoaded ? "website is loading" : "website loaded"
-                }
-                aria-hidden={heroLoaded}
-            ></div> */}
-            <Hero heroLoad={heroLoad} heroDelay={heroDelay} />
+            <Loader
+                loadingState={heroLoaded}
+                setHeroStart={setHeroStart}
+                heroStart={heroStart}
+            />
+            <Hero heroStart={heroStart} />
 
             <div className="work"></div>
         </div>
