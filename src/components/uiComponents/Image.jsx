@@ -17,7 +17,7 @@ function Image({ src, webp, hash, id, loaded = () => {}, alt = "" }) {
                 <Blurhash hash={hash} />
             </div>
             <picture>
-                <source type="image/webp" srcSet={webp} />
+                <source type="image/webp" srcSet={webp} loading="lazy" />
                 <img
                     ref={images}
                     src={src}
@@ -29,7 +29,10 @@ function Image({ src, webp, hash, id, loaded = () => {}, alt = "" }) {
                         display: imgLoaded ? "block" : "none",
                     }}
                     alt={alt}
+                    aria-label={alt}
                     id={id}
+                    role="img"
+                    loading="lazy"
                     decoding="async"
                 />
             </picture>
