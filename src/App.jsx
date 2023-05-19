@@ -5,6 +5,7 @@ import {
     useMemo,
     useContext,
     createContext,
+    Suspense,
 } from "react";
 import Loader from "@comp/Loader.jsx";
 import Hero from "@comp/Hero.jsx";
@@ -30,23 +31,16 @@ todo: hero
 
 function App() {
     let appRef = useRef(null);
-    let [heroLoaded, setHeroLoaded] = useState({
-        c1: true,
-        c2: true,
-        c3: true,
-        c4: true,
-    });
-    let [heroStart, setHeroStart] = useState(false);
+    let [imageLoaded, setImageLoaded] = useState(false);
+
+    if (imageLoaded) {
+        document.body.classList.remove("no-scroll");
+    }
 
     return (
         <div ref={appRef} className="App">
-            <Loader
-                loadingState={heroLoaded}
-                setHeroStart={setHeroStart}
-                heroStart={heroStart}
-            />
-            <Hero heroStart={heroStart} />
-
+            {!imageLoaded && <Loader />}
+            <Hero setImageLoaded={setImageLoaded} />
             <div className="work"></div>
         </div>
     );

@@ -1,9 +1,9 @@
-import { useState, useRef } from "react";
+import { useState, useRef, lazy } from "react";
 import { Blurhash } from "react-blurhash";
 
-function Image({ src, webp, hash, id, loaded = () => {}, alt = "" }) {
+function Image({ src, webp, hash, id, loaded, alt = "" }) {
     const [imgLoaded, setImgLoaded] = useState(false);
-    let images = useRef(null);
+    let image = useRef(null);
 
     return (
         <div className="image">
@@ -17,13 +17,13 @@ function Image({ src, webp, hash, id, loaded = () => {}, alt = "" }) {
                 <Blurhash hash={hash} />
             </div>
             <picture>
-                <source type="image/webp" srcSet={webp} loading="lazy" />
+                <source type="image/webp" srcSet={webp} />
                 <img
-                    ref={images}
+                    ref={image}
                     src={src}
                     onLoad={() => {
                         setImgLoaded(true);
-                        loaded({ loaded: true, src: src });
+                        loaded(true);
                     }}
                     style={{
                         display: imgLoaded ? "block" : "none",
@@ -32,8 +32,6 @@ function Image({ src, webp, hash, id, loaded = () => {}, alt = "" }) {
                     aria-label={alt}
                     id={id}
                     role="img"
-                    loading="lazy"
-                    decoding="async"
                 />
             </picture>
         </div>

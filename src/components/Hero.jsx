@@ -1,7 +1,15 @@
-import { useRef, useEffect, useLayoutEffect, useState } from "react";
+import {
+    useRef,
+    useEffect,
+    useLayoutEffect,
+    useState,
+    Suspense,
+    lazy,
+} from "react";
+import useImageLoaded from "../hooks/useImageLoaded.jsx";
+import useGsap from "../hooks/useGsap.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import Image from "@ui/Image.jsx";
 import { heroImages } from "../assets/images/img/imageDate.jsx";
 
@@ -12,79 +20,38 @@ todo: hero animation
     todo: work when scroll
     
 */
-
 gsap.registerPlugin(ScrollTrigger);
-function Hero({ heroStart }) {
-    let [images, setImages] = useState(heroImages);
-    let [imagesLoaded, setImagesLoaded] = useState([]);
+
+function Hero({ setImageLoaded }) {
+    let images = useRef(heroImages);
+    let [isImageLoad, loadedFun] = useImageLoaded(heroImages, setImageLoaded);
+
     let hero = useRef(null);
     let tl = useRef();
 
-    function allImageLoaded({ loaded, src }) {
-        setImagesLoaded((prevImagesLoaded) => {
-            return [...prevImagesLoaded, { loaded, src }];
+    useGsap(() => {
+        gsap.to(".gallery_image", {
+            x: "100%",
         });
-    }
-    useLayoutEffect(() => {
-        let ctx = gsap.context(() => {
-            tl.current = gsap.timeline();
-
-            let galleryImage = document.querySelector(".gallery_image");
-
-            let animateDuration = 1;
-            let animateDelay = 1;
-
-            if (heroStart) {
-                console.log("state");
-                // tl.current
-
-
-            // gsap.to(".i7", {
-            //     duration: animateDuration,
-            //     delay: animateDelay,
-            //     y: "100%",
-            //     // onStart: () => {
-            //     //     document.querySelector(".container").classList.add("fixed");
-            //     //     document.body.classList.add("stop-scrolling");
-            //     // },
-            //     // onComplete: () => {
-            //     //     document
-            //     //         .querySelector(".container")
-            //     //         .classList.remove("fixed");
-            //     //     document.body.classList.remove("stop-scrolling");
-            //     // },
-            // });
-            // if (
-            //     images.length === imagesLoaded.length &&
-            //     imagesLoaded.every((imageLoaded) => {
-            //         return imageLoaded.loaded == true;
-            //     })
-            // ) {
-            //     // heroLoad();
-            }
-        }, hero);
-        return () => ctx.revert();
-    }, []);
+    }, hero);
 
     return (
-        <main className="hero" ref={hero} aria-busy={heroStart ? true : false}>
+        <main className="hero" ref={hero} aria-busy={true}>
             <div className="container">
-
-                    {/* {images.map((image) => {
-                        return (
-                            <div className="gallery_image" key={image.key}>
-                                <Image
-                                    loaded={allImageLoaded}
-                                    src={image.src}
-                                    webp={image.webp}
-                                    alt={image.alt}
-                                    hash={image.hash}
-                                    id={image.id}
-                                />
-                            </div>
-                        );
-                    })} */}
-
+                {images.current.map((image) => {
+                    return (
+                        <div className="gallery_image" key={image.key}>
+                            <Image
+                                loaded={loadedFun}
+                                src={image.src}
+                                webp={image.webp}
+                                alt={image.alt}
+                                hash={image.hash}
+                                id={image.id}
+                            />
+                        </div>
+                    );
+                })}
             </div>
         </main>
     );

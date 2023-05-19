@@ -147,7 +147,12 @@
 @media screen and (min-width: #{toEm(769px)}) {
 }
 
-@media screen and (min-width: #{toEm(425px)}) {
+@media screen and (max-width: #{toEm(425px)}) {
+    .loader {
+        .loading-spinner {
+            --size: 50vw;
+        }
+    }
 }
 
 /*For tablets */
