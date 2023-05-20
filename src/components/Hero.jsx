@@ -11,7 +11,6 @@ import useGsap from "../hooks/useGsap.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "@ui/Image.jsx";
-import { heroImages } from "../assets/images/img/imageDate.jsx";
 
 /*
 // todo: heroImages
@@ -22,36 +21,22 @@ todo: hero animation
 */
 gsap.registerPlugin(ScrollTrigger);
 
-function Hero({ setImageLoaded }) {
-    let images = useRef(heroImages);
-    let [isImageLoad, loadedFun] = useImageLoaded(heroImages, setImageLoaded);
-
+function Hero({}) {
     let hero = useRef(null);
     let tl = useRef();
 
     useGsap(() => {
-        gsap.to(".gallery_image", {
-            x: "100%",
-        });
+        // gsap.to(".gallery_image", {
+        //     x: "100%",
+        // });
     }, hero);
 
     return (
         <main className="hero" ref={hero} aria-busy={true}>
-            <div className="container">
-                {images.current.map((image) => {
-                    return (
-                        <div className="gallery_image" key={image.key}>
-                            <Image
-                                loaded={loadedFun}
-                                src={image.src}
-                                webp={image.webp}
-                                alt={image.alt}
-                                hash={image.hash}
-                                id={image.id}
-                            />
-                        </div>
-                    );
-                })}
+            <div className="Container">
+                <div className="blend">
+                    <h1>Lorem ipsum dolor</h1>
+                </div>
             </div>
         </main>
     );

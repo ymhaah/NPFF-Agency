@@ -21,6 +21,7 @@ html,
 html:focus-within {
     scroll-behavior: smooth;
     text-size-adjust: none;
+    background-color: var(--clr-white);
     // scroll-snap-type: mandatory;
     // scroll-snap-type: y mandatory;
     // scroll-snap-stop: always;

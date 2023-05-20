@@ -41,7 +41,7 @@
     top: 0;
     left: 0;
     @include flex(r, c, c);
-    background-color: white;
+    background-color: var(--clr-white);
     z-index: 1000;
     .loading-spinner {
         --size: 15vw;
@@ -135,7 +135,7 @@
         }
         .small-dots {
             animation-duration: 10s;
-            background-color: white;
+            background-color: var(--clr-white);
         }
         .big-dots {
             animation-duration: 5s;

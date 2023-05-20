@@ -9,6 +9,7 @@ import {
 } from "react";
 import Loader from "@comp/Loader.jsx";
 import Hero from "@comp/Hero.jsx";
+import Gallery from "@comp/Gallery";
 
 console.log(`Made with 💙 by Youssef Hafnawy: https://twitter.com/hafanwi`);
 // console.warn("the min dimensions is 4");
@@ -40,8 +41,9 @@ function App() {
     return (
         <div ref={appRef} className="App">
             {!imageLoaded && <Loader />}
-            <Hero setImageLoaded={setImageLoaded} />
+            <Hero />
             <div className="work"></div>
+            <Gallery setImageLoaded={setImageLoaded} />
         </div>
     );
 }
