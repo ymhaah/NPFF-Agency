@@ -1,0 +1,14 @@
+@use "../global/index" as *;
+@use "../util/index" as *;
+
+// @include flex(r, c, c);
+// @include flexForPhon(cr,2);
+// @include grid(2, 2, fr, 1rem)
+
+.gallery {
+    .gallery_image {
+        img {
+            width: 20vw;
+        }
+    }
+}

@@ -19,7 +19,6 @@
 }
 html,
 html:focus-within {
-    scroll-behavior: smooth;
     text-size-adjust: none;
     background-color: var(--clr-white);
     // scroll-snap-type: mandatory;
@@ -27,6 +26,7 @@ html:focus-within {
     // scroll-snap-stop: always;
     // scroll-padding: 10vh;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -40,6 +40,24 @@ body {
     max-width: 100%;
     // overflow-x: hidden;
     // background-color: var(--bg-clr);
+}
+html.lenis {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
 }
 .App {
 }
