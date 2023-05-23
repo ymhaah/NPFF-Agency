@@ -26,17 +26,30 @@ function Hero({}) {
     let tl = useRef();
 
     useGsap(() => {
-        // gsap.to(".gallery_image", {
-        //     x: "100%",
-        // });
+        gsap.to(".GA-text-to-left", {
+            scrollTrigger: {
+                scrub: true,
+                end: "50%",
+            },
+            x: "50%",
+        });
+        gsap.to(".GA-text-to-right", {
+            scrollTrigger: {
+                scrub: true,
+                end: "50%",
+            },
+            x: "-50%",
+        });
     }, hero);
 
     return (
         <main className="hero" ref={hero} aria-busy={true}>
             <div className="Container">
-                <div className="blend">
-                    <h1>Lorem ipsum dolor</h1>
-                </div>
+                <h1>
+                    <span className="GA-text-to-left GA-pop">Human</span>
+                    <span className="GA-text-to-right GA-pop">centred</span>
+                    <span className="GA-text-to-left GA-pop">designs</span>
+                </h1>
             </div>
         </main>
     );

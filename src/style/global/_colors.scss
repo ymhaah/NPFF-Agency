@@ -2,9 +2,12 @@
     --clr-gray-600: hsl(210, 11%, 15%);
     --clr-gray-300: hsl(210, 11%, 71%);
 
-    --clr-dark-gray: hsl(225, 7%, 12%);
+    --clr-dark-gray-800: hsl(30, 20%, 2%);
+    --clr-dark-gray-700: hsl(210, 11%, 15%);
+    --clr-dark-gray-600: hsl(210, 10%, 23%);
     --clr-black: hsl(0, 0%, 0%);
-    --clr-tan: hsl(33, 12%, 83%);
+    --clr-tan-300: hsl(210, 16%, 93%);
+    --clr-tan-200: hsl(210, 20%, 98%);
     --clr-white: hsl(0, 0%, 100%);
 
     // * alpha
@@ -13,8 +16,8 @@
     --clr-alpha-dark-gray: 225, 7%, 12%;
 
     //! main
-    --main-dark-clr: var(--clr-dark-gray);
-    --main-light-clr: var(--clr-tan);
+    --main-dark-clr: var(--clr-dark-gray-800);
+    --main-light-clr: var(--clr-tan-200);
 
     --accent-clr: ;
 }

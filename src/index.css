@@ -1,15 +1,18 @@
 :root {
   --clr-gray-600: hsl(210, 11%, 15%);
   --clr-gray-300: hsl(210, 11%, 71%);
-  --clr-dark-gray: hsl(225, 7%, 12%);
+  --clr-dark-gray-800: hsl(30, 20%, 2%);
+  --clr-dark-gray-700: hsl(210, 11%, 15%);
+  --clr-dark-gray-600: hsl(210, 10%, 23%);
   --clr-black: hsl(0, 0%, 0%);
-  --clr-tan: hsl(33, 12%, 83%);
+  --clr-tan-300: hsl(210, 16%, 93%);
+  --clr-tan-200: hsl(210, 20%, 98%);
   --clr-white: hsl(0, 0%, 100%);
   --clr-alpha-white: 0 0% 100%;
   --clr-alpha-black: 0 0% 0%;
   --clr-alpha-dark-gray: 225, 7%, 12%;
-  --main-dark-clr: var(--clr-dark-gray);
-  --main-light-clr: var(--clr-tan);
+  --main-dark-clr: var(--clr-dark-gray-800);
+  --main-light-clr: var(--clr-tan-200);
   --accent-clr: ;
 }
 
@@ -123,6 +126,7 @@ body {
   margin: 0;
   text-transform: capitalize;
   letter-spacing: 0.25rem;
+  line-height: 1.6;
 }
 
 :where(h1, h2, h3, h4, p, span):not(:last-child) {
@@ -131,13 +135,13 @@ body {
 
 h1,
 .h1 {
-  font-size: var(--fs-l);
-  font-weight: var(--fw-m);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-b);
 }
 
 h2,
 .h2 {
-  font-size: var(--fs-xxl);
+  font-size: var(--fs-l);
   font-weight: var(--fw-m);
 }
 
@@ -272,6 +276,7 @@ body {
 html,
 body {
   max-width: 100%;
+  overflow-x: hidden;
 }
 
 html.lenis {
@@ -359,6 +364,7 @@ svg {
      object-position: center;
   box-shadow: none;
   pointer-events: none;
+  isolation: isolate;
 }
 
 [type=button] {
@@ -436,8 +442,8 @@ svg {
 }
 
 .no-scroll {
-  height: 100%;
-  overflow: hidden;
+  height: 100vh !important;
+  overflow: hidden !important;
 }
 
 .accent-X-clr {
@@ -451,7 +457,7 @@ svg {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--clr-white);
+  background-color: var(--main-light-clr);
   z-index: 1000;
 }
 .loader .loading-spinner {
@@ -459,7 +465,7 @@ svg {
   width: var(--size);
   height: var(--size);
   position: relative;
-  filter: blur(2px) contrast(12);
+  filter: blur(3px) contrast(10);
 }
 .loader .loading-spinner .absolute {
   width: 100%;
@@ -470,7 +476,7 @@ svg {
 }
 .loader .loading-spinner .small-dots.circle {
   --circle-size: var(--size);
-  --sons-size: 10%;
+  --sons-size: 12%;
   --circle-radius: calc(
       calc(var(--circle-size) - var(--sons-size)) / 2
   );
@@ -524,7 +530,7 @@ svg {
 }
 .loader .loading-spinner .big-dots.circle {
   --circle-size: var(--size);
-  --sons-size: 15%;
+  --sons-size: 18%;
   --circle-radius: calc(
       calc(var(--circle-size) - var(--sons-size)) / 2
   );
@@ -566,15 +572,15 @@ svg {
   mix-blend-mode: multiply;
 }
 .loader .loading-spinner .spinner span {
-  background-color: var(--clr-dark-gray);
+  background-color: var(--main-dark-clr);
   border-radius: 50%;
 }
 .loader .loading-spinner .small-dots {
-  animation-duration: 10s;
-  background-color: var(--clr-white);
+  animation-duration: 7s;
+  background-color: var(--main-light-clr);
 }
 .loader .loading-spinner .big-dots {
-  animation-duration: 5s;
+  animation-duration: 4s;
 }
 
 @keyframes spin {
@@ -654,19 +660,36 @@ svg {
 main.hero {
   width: 100%;
   height: 100%;
-  background-color: var(--clr-white);
+  background-color: var(--main-dark-clr);
 }
-main.hero .Container .blend h1 {
+main.hero .Container h1 {
+  width: 100%;
+  padding: 0 5%;
   position: fixed;
-  top: 5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
   mix-blend-mode: difference;
+  line-height: 1;
+}
+main.hero .Container h1 span {
+  width: 100%;
+  display: inline-block;
   color: var(--clr-white);
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  margin: 0;
+}
+main.hero .Container h1 span:nth-child(2) {
+  text-align: right;
 }
 
 .work {
   width: 100%;
-  height: 300vh;
-  background-color: var(--main-dark-clr);
+  height: 100vh;
+  background-color: var(--main-light-clr);
 }
 
 .gallery .gallery_image img {
@@ -781,11 +804,21 @@ footer .mine p a {
   }
 }
 @media screen and (max-width: 26.5625em) {
+  h1,
+  .h1 {
+    font-size: var(--fs-l);
+  }
   .loader .loading-spinner {
     --size: 50vw;
   }
 }
 /*For tablets */
+@supports (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
 @supports (height: 100dvh) {
   main.hero,
   .loader {

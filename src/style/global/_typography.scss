@@ -110,18 +110,19 @@ body {
     margin: 0;
     text-transform: capitalize;
     letter-spacing: #{toRem(4px)};
+    line-height: 1.6;
 }
 :where(h1, h2, h3, h4, p, span):not(:last-child) {
     margin: 0 0 1rem 0;
 }
 h1,
 .h1 {
-    font-size: var(--fs-l);
-    font-weight: var(--fw-m);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-b);
 }
 h2,
 .h2 {
-    font-size: var(--fs-xxl);
+    font-size: var(--fs-l);
     font-weight: var(--fw-m);
 }
 h3,

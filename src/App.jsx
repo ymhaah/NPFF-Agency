@@ -9,11 +9,11 @@ import {
     Suspense,
 } from "react";
 
-import Lenis from "@studio-freight/lenis";
 import { Lenis as ReactLenis, useLenis } from "@studio-freight/react-lenis";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useGsap from "./hooks/useGsap";
 
 import Loader from "@comp/Loader.jsx";
 import Hero from "@comp/Hero.jsx";
@@ -40,14 +40,12 @@ todo: hero
 
 gsap.registerPlugin(ScrollTrigger);
 
-//
-
 function App() {
     const lenisConfig = useLenis(({ scroll }) => {
         ScrollTrigger.update();
     });
 
-    let appRef = useRef(null);
+    let app = useRef(null);
     let [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
@@ -56,6 +54,20 @@ function App() {
         }
     }, [imageLoaded]);
 
+    useGsap(() => {
+        let animationDelay = 1.5;
+        if (imageLoaded) {
+            gsap.from(".GA-pop", {
+                scrollTrigger: ".GA-pop",
+                delay: animationDelay,
+                stagger: 0.1,
+                opacity: 0,
+                y: "50%",
+                rotation: "5deg",
+            });
+        }
+    }, app);
+
     return (
         <ReactLenis
             root
@@ -63,11 +75,11 @@ function App() {
                 duration: 1.2,
             }}
         >
-            <div ref={appRef} className="App">
+            <div ref={app} className="App ">
                 {!imageLoaded && <Loader />}
                 <Hero />
-                <div className="work"></div>
                 <Gallery setImageLoaded={setImageLoaded} />
+                <div className="work"></div>
             </div>
         </ReactLenis>
     );

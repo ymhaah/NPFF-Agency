@@ -1,4 +1,4 @@
-import { useState, useRef, lazy } from "react";
+import { useState, useRef } from "react";
 import { Blurhash } from "react-blurhash";
 
 function Image({ src, webp, hash, id, loaded, alt = "" }) {

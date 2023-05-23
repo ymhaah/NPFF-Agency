@@ -38,7 +38,7 @@ body {
 html,
 body {
     max-width: 100%;
-    // overflow-x: hidden;
+    overflow-x: hidden;
     // background-color: var(--bg-clr);
 }
 html.lenis {
@@ -140,6 +140,7 @@ svg {
     object-position: center;
     box-shadow: none;
     pointer-events: none;
+    isolation: isolate;
 }
 [type="button"] {
     user-select: none;
@@ -212,8 +213,8 @@ svg {
     }
 }
 .no-scroll {
-    height: 100%;
-    overflow: hidden;
+    height: 100vh !important;
+    overflow: hidden !important;
 }
 .accent-X-clr {
     --accent-clr: var(--accent-X-clr);

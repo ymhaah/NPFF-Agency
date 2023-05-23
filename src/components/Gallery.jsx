@@ -19,15 +19,15 @@ function Gallery({ setImageLoaded }) {
         1
     );
 
-    useGsap(() => {
-        gsap.to(".gallery_image", {
-            scrollTrigger: {
-                trigger: ".gallery_image",
-                scrub: true,
-            },
-            x: 200,
-        });
-    }, [gallery]);
+    // useGsap(() => {
+    //     gsap.to(".gallery_image", {
+    //         scrollTrigger: {
+    //             trigger: ".gallery_image",
+    //             scrub: true,
+    //         },
+    //         x: 200,
+    //     });
+    // }, [gallery]);
 
     return (
         <div className="gallery" ref={gallery}>

@@ -19,6 +19,7 @@ export default function useImageLoaded(images, setImageLoaded, delay = 0) {
             setTimeout(() => {
                 setImageLoaded(true);
                 imagesLoaded = true;
+                console.log("loaded");
             }, delay * 1000);
         }
     }, [imageArr]);

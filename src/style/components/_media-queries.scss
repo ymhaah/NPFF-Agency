@@ -148,6 +148,10 @@
 }
 
 @media screen and (max-width: #{toEm(425px)}) {
+    h1,
+    .h1 {
+        font-size: var(--fs-l);
+    }
     .loader {
         .loading-spinner {
             --size: 50vw;
@@ -171,7 +175,7 @@
 @supports (overflow-x: clip) {
     html,
     body {
-        // overflow-x: clip;
+        overflow-x: clip;
     }
 }
 
