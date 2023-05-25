@@ -10,6 +10,7 @@ import {
 } from "react";
 
 import { Lenis as ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import noise from "./assets/images/svg/noise.svg";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -77,6 +78,10 @@ function App() {
         >
             <div ref={app} className="App ">
                 {!imageLoaded && <Loader />}
+                <div
+                    className="noise"
+                    style={{ backgroundImage: `url(${noise})` }}
+                ></div>
                 <Hero />
                 <Gallery setImageLoaded={setImageLoaded} />
                 <div className="work"></div>

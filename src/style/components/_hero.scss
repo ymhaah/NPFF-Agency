@@ -18,9 +18,42 @@ main.hero {
     height: 100%;
     background-color: var(--main-dark-clr);
     .Container {
+        @include flex(c, sb, c);
+        header {
+            width: 100%;
+            min-height: 20%;
+            padding: calc(100% - var(--container-width));
+            .logo {
+                position: fixed;
+                z-index: 9;
+                mix-blend-mode: difference;
+                a {
+                    img {
+                        width: var(--fs-400);
+                        filter: blur(1px);
+                    }
+                }
+            }
+        }
+        footer {
+            width: 100%;
+            min-height: 20%;
+            padding: calc(100% - var(--container-width));
+            .explore {
+                position: fixed;
+                z-index: 9;
+                mix-blend-mode: difference;
+                a {
+                    img {
+                        width: var(--fs-400);
+                        filter: blur(1px);
+                    }
+                }
+            }
+        }
         h1 {
             width: 100%;
-            padding: 0 5%;
+            padding: 0 calc(100% - var(--container-width));
             position: fixed;
             top: 50%;
             left: 50%;

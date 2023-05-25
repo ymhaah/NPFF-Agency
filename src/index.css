@@ -16,7 +16,7 @@
   --accent-clr: ;
 }
 
-.main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .loader, .old-script,
+main.hero .Container, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .loader, .old-script,
 .no-script {
   display: flex;
 }
@@ -26,16 +26,20 @@
   flex-direction: row;
 }
 
+main.hero .Container {
+  flex-direction: column;
+}
+
 .main-header .header__Container .header__Logo, .loader, .old-script,
 .no-script {
   justify-content: center;
 }
 
-.main-header .header__Container, .main-header .header__Container .header__main-navigation ul {
+main.hero .Container, .main-header .header__Container, .main-header .header__Container .header__main-navigation ul {
   justify-content: space-between;
 }
 
-.main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .loader, .old-script,
+main.hero .Container, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .loader, .old-script,
 .no-script {
   align-items: center;
 }
@@ -299,8 +303,18 @@ html.lenis {
   pointer-events: none;
 }
 
+.noise {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  isolation: isolate;
+  opacity: 70%;
+}
+
 .Container {
-  --container-width: 75%;
+  --container-width: 95%;
   height: 100%;
   width: var(--container-width, 90%);
   margin-inline: auto;
@@ -662,9 +676,37 @@ main.hero {
   height: 100%;
   background-color: var(--main-dark-clr);
 }
+main.hero .Container header {
+  width: 100%;
+  min-height: 20%;
+  padding: calc(100% - var(--container-width));
+}
+main.hero .Container header .logo {
+  position: fixed;
+  z-index: 9;
+  mix-blend-mode: difference;
+}
+main.hero .Container header .logo a img {
+  width: var(--fs-400);
+  filter: blur(1px);
+}
+main.hero .Container footer {
+  width: 100%;
+  min-height: 20%;
+  padding: calc(100% - var(--container-width));
+}
+main.hero .Container footer .explore {
+  position: fixed;
+  z-index: 9;
+  mix-blend-mode: difference;
+}
+main.hero .Container footer .explore a img {
+  width: var(--fs-400);
+  filter: blur(1px);
+}
 main.hero .Container h1 {
   width: 100%;
-  padding: 0 5%;
+  padding: 0 calc(100% - var(--container-width));
   position: fixed;
   top: 50%;
   left: 50%;
