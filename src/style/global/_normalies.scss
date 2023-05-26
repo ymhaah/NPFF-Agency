@@ -105,7 +105,7 @@ ul {
 }
 .focus {
     --focus-shadow: 0 0 0 transparent;
-    --accent-clr: var(--txt-clr);
+    --accent-clr: var(--main-light-clr);
     box-shadow: var(--focus-shadow), 0 0 0 -0.4em var(--bg-clr),
         0 0 0 -0.6em var(--accent-clr);
     transition: box-shadow 400ms cubic-bezier(0.66, -0.2, 0.27, 1.15);
@@ -159,7 +159,7 @@ svg {
     appearance: button;
     font: inherit;
 }
-:where(.Button, .inputFiled) {
+.Button {
     min-height: 3.25rem;
     max-height: 3em;
     width: min-content;
@@ -175,10 +175,10 @@ svg {
     font-size: var(--fs-s);
     font-weight: var(--fw-b);
     background-color: transparent;
-    color: var(--txt-clr);
-    border: 2px solid var(--secondary-clr);
-    border-radius: var(--border-radius);
-    --focus-shadow: inset 0px -0.4rem 0 var(--accent-shadow-clr);
+    color: var(--main-light-clr);
+    border: 3px solid var(--main-light-clr);
+    border-radius: 5rem;
+    --focus-shadow: inset 0px -0.4rem 0 var(--main-light-clr);
 }
 .inputFiled {
     outline: 2px solid transparent;

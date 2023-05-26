@@ -55,7 +55,6 @@ function Hero({}) {
                             <span className="visually-hidden">logo</span>
                         </a>
                     </div>
-                    <button>click me!</button>
                 </header>
                 <h1>
                     <span className="GA-text-to-left GA-pop">Human</span>
