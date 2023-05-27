@@ -30,7 +30,7 @@ function Gallery({ setImageLoaded }) {
     // }, [gallery]);
 
     return (
-        <div className="gallery" ref={gallery}>
+        <div className="gallery" ref={gallery} id="gallery">
             {images.current.map((image) => {
                 return (
                     <div className="gallery_image" key={image.key}>

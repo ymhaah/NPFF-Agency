@@ -9,7 +9,7 @@ import {
     Suspense,
 } from "react";
 
-import { Lenis as ReactLenis, useLenis } from "@studio-freight/react-lenis";
+import Lenis from "@studio-freight/lenis";
 import noise from "./assets/images/svg/noise.svg";
 
 import { gsap } from "gsap";
@@ -39,15 +39,27 @@ todo: hero
 // let delay = 0.1;
 // let allTime = (duration + delay + 0.1) * 1000;
 
+const lenis = new Lenis({
+    duration: 3,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+});
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
 gsap.registerPlugin(ScrollTrigger);
+lenis.on("scroll", ScrollTrigger.update);
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
 
 function App() {
-    const lenisConfig = useLenis(({ scroll }) => {
-        ScrollTrigger.update();
-    });
-
     let app = useRef(null);
     let [imageLoaded, setImageLoaded] = useState(false);
+
+    useLayoutEffect(() => {}, []);
 
     useEffect(() => {
         if (imageLoaded) {
@@ -56,37 +68,28 @@ function App() {
     }, [imageLoaded]);
 
     useGsap(() => {
-        let animationDelay = 1.5;
-        if (imageLoaded) {
-            gsap.from(".GA-pop", {
-                scrollTrigger: ".GA-pop",
-                delay: animationDelay,
-                stagger: 0.1,
-                opacity: 0,
-                y: "50%",
-                rotation: "5deg",
-            });
-        }
+        // gsap.from(".GA-pop", {
+        //     scrollTrigger: {
+        //         trigger: ".GA-pop",
+        //     },
+        //     stagger: 0.1,
+        //     opacity: 0,
+        //     y: "50%",
+        //     rotation: "5deg",
+        // });
     }, app);
 
     return (
-        <ReactLenis
-            root
-            options={{
-                duration: 1.2,
-            }}
-        >
-            <div ref={app} className="App ">
-                {!imageLoaded && <Loader />}
-                <div
-                    className="noise"
-                    style={{ backgroundImage: `url(${noise})` }}
-                ></div>
-                <Hero />
-                <Gallery setImageLoaded={setImageLoaded} />
-                <div className="work"></div>
-            </div>
-        </ReactLenis>
+        <div ref={app} className="App ">
+            {!imageLoaded && <Loader />}
+            <div
+                className="noise"
+                style={{ backgroundImage: `url(${noise})` }}
+            ></div>
+            <Hero />
+            <Gallery setImageLoaded={setImageLoaded} />
+            <div className="work"></div>
+        </div>
     );
 }
 

@@ -15,6 +15,7 @@
   --main-dark-clr: var(--clr-dark-gray-800);
   --main-light-clr: var(--clr-tan-200);
   --accent-clr: ;
+  color-scheme: dark !important;
 }
 
 main.hero .Container, main.hero .Container header, main.hero .Container footer, .main-header .header__Container, .main-header .header__Container .header__Logo, .main-header .header__Container .header__main-navigation, .main-header .header__Container .header__main-navigation ul, .loader, .old-script,
@@ -673,13 +674,6 @@ svg {
   cursor: pointer;
 }
 
-/*
-    // todo: make the hero grid 
-    todo: hero main animation styling
-    todo: hero elements
-        todo: header & button
-        todo: the button component with react hot tost library
-*/
 main.hero {
   width: 100%;
   height: 100vh;
@@ -690,7 +684,7 @@ main.hero .Container header {
   min-height: 20%;
   position: fixed;
   top: 0;
-  z-index: 9;
+  z-index: 3;
   padding: 0 calc(100% - var(--container-width));
   mix-blend-mode: difference;
 }
@@ -702,12 +696,12 @@ main.hero .Container footer {
   width: 100%;
   min-height: 20%;
   position: fixed;
-  z-index: 9;
+  z-index: 1;
   bottom: 0;
   padding: calc(100% - var(--container-width));
   mix-blend-mode: difference;
 }
-main.hero .Container footer .explore a img {
+main.hero .Container footer .explore img {
   width: var(--fs-400);
   filter: blur(0.03125rem) drop-shadow(10px 15px 20px hsla(var(--clr-alpha-tan-200), 0.7));
 }
@@ -718,12 +712,11 @@ main.hero .Container h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9;
+  z-index: 2;
   mix-blend-mode: difference;
   line-height: 1;
 }
 main.hero .Container h1 span {
-  width: 100%;
   display: inline-block;
   color: var(--main-light-clr);
   text-transform: uppercase;
@@ -731,7 +724,14 @@ main.hero .Container h1 span {
   white-space: nowrap;
   margin: 0;
 }
+main.hero .Container h1 span:nth-child(1) img {
+  width: var(--fs-100);
+  position: absolute;
+  top: 0;
+  right: -1rem;
+}
 main.hero .Container h1 span:nth-child(2) {
+  width: 100%;
   text-align: right;
 }
 
