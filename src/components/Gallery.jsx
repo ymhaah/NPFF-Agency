@@ -1,10 +1,9 @@
 import { useRef, useState } from "react";
 import useImageLoaded from "../hooks/useImageLoaded.jsx";
-
-import useGsap from "../hooks/useGsap.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import useGsap from "../hooks/useGsap.jsx";
 import Image from "@ui/Image.jsx";
 import { heroImages } from "../assets/images/img/imageDate.jsx";
 

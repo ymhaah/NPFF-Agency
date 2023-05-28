@@ -28,6 +28,9 @@
 // For laptop, S-Monitor
 
 @media screen and (max-width: #{toEm(768px)}) {
+    .cursor-follower {
+        display: none;
+    }
     .loader {
         .Container {
             --container-width: calc(100% - 3rem);

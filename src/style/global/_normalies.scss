@@ -151,6 +151,16 @@ svg {
     pointer-events: none;
     isolation: isolate;
 }
+.cursor-follower {
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: var(--main-light-clr);
+    position: fixed;
+    isolation: isolate;
+    z-index: 1;
+    mix-blend-mode: difference;
+}
 [type="button"] {
     user-select: none;
     overflow: hidden;

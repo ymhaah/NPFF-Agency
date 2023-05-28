@@ -1,33 +1,16 @@
-import {
-    useRef,
-    useEffect,
-    useLayoutEffect,
-    useState,
-    Suspense,
-    lazy,
-} from "react";
-import useGsap from "../hooks/useGsap.jsx";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useGsap from "../hooks/useGsap.jsx";
 import Image from "@ui/Image.jsx";
 import logo from "../assets/images/svg/logo.svg";
 import compass from "../assets/images/svg/compass.svg";
 import human from "../assets/images/svg/human.svg";
 
-/*
-// todo: allImageLoaded function
-// todo: hero animation
-//     todo: work when scroll
-//         todo: main text
-//         todo: the compass
-todo: the button comp with hot tost
-*/
 gsap.registerPlugin(ScrollTrigger);
 
-function Hero({}) {
+function Hero() {
     let hero = useRef(null);
-    let tl = useRef();
-
     useGsap(() => {
         gsap.to(".GA-text-to-left", {
             scrollTrigger: {
@@ -35,7 +18,7 @@ function Hero({}) {
                 end: "+=150%",
                 // endTrigger: ""
             },
-            x: "75%",
+            x: "60%",
         });
         gsap.to(".GA-text-to-right", {
             scrollTrigger: {
@@ -72,10 +55,24 @@ function Hero({}) {
                         <Image src={human} />
                     </span>
                     <span className="GA-text-to-right">centred</span>
-                    <span className="GA-text-to-left">designs</span>
+                    <span className="GA-text-to-left">design</span>
                 </h1>
                 <footer>
-                    <div className="explore GA-scroll-spinning">
+                    <div
+                        className="explore GA-scroll-spinning"
+                        onClick={() => {
+                            import("react-hot-toast")
+                                .then((module) => {
+                                    return { default: module.toast };
+                                })
+                                .then((module) => {
+                                    let toast = module.default;
+                                    toast.error(
+                                        "This website still under development"
+                                    );
+                                });
+                        }}
+                    >
                         <Image src={compass} />
                     </div>
                 </footer>

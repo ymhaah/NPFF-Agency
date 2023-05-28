@@ -15,7 +15,8 @@ import noise from "./assets/images/svg/noise.svg";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useGsap from "./hooks/useGsap";
-
+import useMousePosition from "./hooks/useMousePosition";
+import { Toaster } from "react-hot-toast";
 import Loader from "@comp/Loader.jsx";
 import Hero from "@comp/Hero.jsx";
 import Gallery from "@comp/Gallery";
@@ -26,11 +27,13 @@ console.log(`Made with 💙 by Youssef Hafnawy: https://twitter.com/hafanwi`);
 
 // todo: font
 // todo: image
+// todo: scrolling
     // todo: plurHash
     // todo: image opt
-todo: hero
-    // todo: hero images
-
+// todo: hero
+    // todo: header
+    // todo: hot tost
+todo: Gallery
 
 */
 
@@ -59,13 +62,21 @@ function App() {
     let app = useRef(null);
     let [imageLoaded, setImageLoaded] = useState(false);
 
-    useLayoutEffect(() => {}, []);
+    let cursorFollower = useRef(null);
 
     useEffect(() => {
         if (imageLoaded) {
             document.body.classList.remove("no-scroll");
         }
     }, [imageLoaded]);
+
+    let mousePos = useMousePosition((x, y) => {
+        gsap.to(cursorFollower.current, {
+            scale: 50,
+            x: x,
+            y: y,
+        });
+    });
 
     useGsap(() => {
         // gsap.from(".GA-pop", {
@@ -81,14 +92,16 @@ function App() {
 
     return (
         <div ref={app} className="App ">
+            <Toaster position="top-center" />
             {!imageLoaded && <Loader />}
+
+            <span className="cursor-follower" ref={cursorFollower}></span>
             <div
                 className="noise"
                 style={{ backgroundImage: `url(${noise})` }}
             ></div>
             <Hero />
             <Gallery setImageLoaded={setImageLoaded} />
-            <div className="work"></div>
         </div>
     );
 }

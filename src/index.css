@@ -391,6 +391,17 @@ svg {
   isolation: isolate;
 }
 
+.cursor-follower {
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background-color: var(--main-light-clr);
+  position: fixed;
+  isolation: isolate;
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
 [type=button] {
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -701,6 +712,9 @@ main.hero .Container footer {
   padding: calc(100% - var(--container-width));
   mix-blend-mode: difference;
 }
+main.hero .Container footer .explore {
+  cursor: pointer;
+}
 main.hero .Container footer .explore img {
   width: var(--fs-400);
   filter: blur(0.03125rem) drop-shadow(10px 15px 20px hsla(var(--clr-alpha-tan-200), 0.7));
@@ -733,12 +747,6 @@ main.hero .Container h1 span:nth-child(1) img {
 main.hero .Container h1 span:nth-child(2) {
   width: 100%;
   text-align: right;
-}
-
-.work {
-  width: 100%;
-  height: 100vh;
-  background-color: var(--main-light-clr);
 }
 
 .gallery .gallery_image img {
@@ -783,6 +791,9 @@ footer .mine p a {
 }
 
 @media screen and (max-width: 48em) {
+  .cursor-follower {
+    display: none;
+  }
   .loader .Container {
     --container-width: calc(100% - 3rem);
   }
