@@ -3,12 +3,45 @@
 
 // @include flex(r, c, c);
 // @include flexForPhon(cr,2);
-// @include grid(2, 2, fr, 1rem)
+// @include grid(2, 2, fr, 1rem);
 
 .gallery {
-    .gallery_image {
-        img {
-            width: 20vw;
+    --gap: 2rem;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    .grid {
+        --addon-size: 10%;
+        width: calc(100% + var(--addon-size));
+        height: calc(100% + var(--addon-size));
+        position: absolute;
+        top: calc(-1 * var(--addon-size));
+        left: calc(-1 * var(--addon-size));
+        @include flex(r, c, c);
+        gap: var(--gap);
+        .coll {
+            width: 100%;
+            @include flex(c, c, c);
+            gap: var(--gap);
+            .gallery-image {
+                width: 100%;
+                height: var(--image-hight, 25vh);
+                backface-visibility: hidden;
+                background-color: var(--main-dark-clr);
+            }
+            .image-s {
+                --image-hight: 25vh;
+            }
+            .image-m {
+                --image-hight: 35vh;
+            }
+            .image-l {
+                --image-hight: 40vh;
+            }
+            .image-xl {
+                --image-hight: 50vh;
+            }
         }
     }
 }

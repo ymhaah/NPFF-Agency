@@ -62,6 +62,8 @@ function App() {
     let app = useRef(null);
     let [imageLoaded, setImageLoaded] = useState(false);
 
+    // console.log(imageLoaded);
+
     let cursorFollower = useRef(null);
 
     useEffect(() => {

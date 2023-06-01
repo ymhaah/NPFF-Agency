@@ -1,4 +1,4 @@
-let heroImages = [
+let mainImages = [
     {
         src: new URL("./hero-main-H1.jpg", import.meta.url).href,
         webp: new URL("./webp/hero-main-H1.webp", import.meta.url).href,
@@ -51,4 +51,4 @@ let heroImages = [
     },
 ];
 
-export { heroImages };
+export { mainImages };
