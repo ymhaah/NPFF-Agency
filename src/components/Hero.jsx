@@ -12,21 +12,21 @@ gsap.registerPlugin(ScrollTrigger);
 function Hero() {
     let hero = useRef(null);
     useGsap(() => {
-        gsap.to(".GA-text-to-left", {
-            scrollTrigger: {
-                scrub: true,
-                end: "+=150%",
-                // endTrigger: ""
-            },
-            x: "60%",
-        });
-        gsap.to(".GA-text-to-right", {
-            scrollTrigger: {
-                scrub: true,
-                end: "+=150%",
-            },
-            x: "-25%",
-        });
+        // gsap.to(".GA-text-to-left", {
+        //     scrollTrigger: {
+        //         scrub: true,
+        //         end: "+=150%",
+        //         // endTrigger: ""
+        //     },
+        //     x: "60%",
+        // });
+        // gsap.to(".GA-text-to-right", {
+        //     scrollTrigger: {
+        //         scrub: true,
+        //         end: "+=150%",
+        //     },
+        //     x: "-25%",
+        // });
         gsap.to(".GA-scroll-spinning", {
             scrollTrigger: {
                 scrub: true,
@@ -49,14 +49,14 @@ function Hero() {
                         </a>
                     </div>
                 </header>
-                <h1>
+                {/* <h1>
                     <span className="GA-text-to-left">
                         Human
                         <Image src={human} />
                     </span>
                     <span className="GA-text-to-right">centred</span>
                     <span className="GA-text-to-left">design</span>
-                </h1>
+                </h1> */}
                 <footer>
                     <div
                         className="explore GA-scroll-spinning"

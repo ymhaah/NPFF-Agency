@@ -22,6 +22,16 @@
 // For Monitor
 
 @media screen and (max-width: #{toEm(1024px)}) {
+    .gallery {
+        // --gap: 1rem;
+        // --image-hight: 60vh;
+        --coll-num: 3;
+        .grid {
+            :nth-child(4) {
+                display: none;
+            }
+        }
+    }
 }
 @media screen and (min-width: #{toEm(1025px)}) {
 }
@@ -42,6 +52,16 @@
     .main-header {
         .Container {
             --container-width: 90%;
+        }
+    }
+    .gallery {
+        // --gap: 1rem;
+        // --image-hight: 60vh;
+        --coll-num: 2;
+        .grid {
+            :nth-child(3) {
+                display: none;
+            }
         }
     }
     header {
@@ -159,6 +179,11 @@
         .loading-spinner {
             --size: 50vw;
         }
+    }
+    .gallery {
+        // --gap: 1rem;
+        // --image-hight: 60vh;
+        --coll-num: 1;
     }
 }
 

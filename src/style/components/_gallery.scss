@@ -6,41 +6,31 @@
 // @include grid(2, 2, fr, 1rem);
 
 .gallery {
-    --gap: 2rem;
+    --gap: 1rem;
+    --image-hight: 45vh;
+    --coll-num: 4;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    margin: 10vh 0s;
+    background-color: var(main-light-clr);
     position: relative;
     .grid {
-        --addon-size: 10%;
-        width: calc(100% + var(--addon-size));
-        height: calc(100% + var(--addon-size));
-        position: absolute;
-        top: calc(-1 * var(--addon-size));
-        left: calc(-1 * var(--addon-size));
-        @include flex(r, c, c);
-        gap: var(--gap);
+        width: 100%;
+        display: grid;
+        @include grid(-1, var(--coll-num), fr, var(--gap));
         .coll {
             width: 100%;
-            @include flex(c, c, c);
-            gap: var(--gap);
             .gallery-image {
-                width: 100%;
-                height: var(--image-hight, 25vh);
-                backface-visibility: hidden;
+                height: var(--image-hight, 40vh);
                 background-color: var(--main-dark-clr);
-            }
-            .image-s {
-                --image-hight: 25vh;
-            }
-            .image-m {
-                --image-hight: 35vh;
-            }
-            .image-l {
-                --image-hight: 40vh;
-            }
-            .image-xl {
-                --image-hight: 50vh;
+                margin-bottom: var(--gap);
+                backface-visibility: hidden;
+                .image {
+                    width: 100%;
+                    height: 100%;
+                    img {
+                    }
+                }
             }
         }
     }

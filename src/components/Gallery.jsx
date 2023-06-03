@@ -17,131 +17,76 @@ function Gallery({ setImageLoaded }) {
         1
     );
 
-    // useGsap(() => {
-    //     gsap.to(".gallery_image", {
-    //         scrollTrigger: {
-    //             trigger: ".gallery_image",
-    //             scrub: true,
-    //         },
-    //         x: 200,
-    //     });
-    // }, [gallery]);
+    useGsap(() => {
+        gsap.from(".GA-c1", {
+            scrollTrigger: {
+                trigger: ".grid",
+                scrub: true,
+            },
+            y: -200,
+        });
+        gsap.from(".GA-c2", {
+            scrollTrigger: {
+                trigger: ".grid",
+                scrub: true,
+            },
+            y: -400,
+        });
+        gsap.from(".GA-c3", {
+            scrollTrigger: {
+                trigger: ".grid",
+                scrub: true,
+            },
+            y: -500,
+        });
+        gsap.from(".GA-c4", {
+            scrollTrigger: {
+                trigger: ".grid",
+                scrub: true,
+            },
+            y: -300,
+        });
+    }, [gallery]);
 
     return (
         <section className="gallery" ref={gallery} id="gallery">
             <div className="grid">
-                <div className="coll">
-                    <div className="gallery-image image-s">
-                        <Image
-                            loaded={loadedFun}
-                            src={mainImages[0].src}
-                            webp={mainImages[0].webp}
-                            alt={mainImages[0].alt}
-                            hash={mainImages[0].hash}
-                            id={mainImages[0].id}
-                        />
-                    </div>
-                    <div className="gallery-image image-m">
-                        <Image
-                            loaded={loadedFun}
-                            src={mainImages[1].src}
-                            webp={mainImages[1].webp}
-                            alt={mainImages[1].alt}
-                            hash={mainImages[1].hash}
-                            id={mainImages[1].id}
-                        />
-                    </div>
-                    <div className="gallery-image image-l">
-                        <Image
-                            loaded={loadedFun}
-                            src={mainImages[2].src}
-                            webp={mainImages[2].webp}
-                            alt={mainImages[2].alt}
-                            hash={mainImages[2].hash}
-                            id={mainImages[2].id}
-                        />
-                    </div>
+                <div className="coll GA-c1">
+                    <div className="gallery-image"></div>
+                    <div className="gallery-image"></div>
+                    <div className="gallery-image"></div>
                 </div>
-                <div className="coll">
-                    <div className="gallery-image image-m">
-                        <Image
-                            loaded={loadedFun}
-                            src={mainImages[3].src}
-                            webp={mainImages[3].webp}
-                            alt={mainImages[3].alt}
-                            hash={mainImages[3].hash}
-                            id={mainImages[3].id}
-                        />
-                    </div>
-                    <div className="gallery-image image-xl">
-                        <Image
-                            loaded={loadedFun}
-                            src={mainImages[4].src}
-                            webp={mainImages[4].webp}
-                            alt={mainImages[4].alt}
-                            hash={mainImages[4].hash}
-                            id={mainImages[4].id}
-                        />
-                    </div>
-                    <div className="gallery-image image-l">
-                        {/* <Image
-                            loaded={loadedFun}
-                            src={mainImages[5].src}
-                            webp={mainImages[5].webp}
-                            alt={mainImages[5].alt}
-                            hash={mainImages[5].hash}
-                            id={mainImages[5].id}
-                        /> */}
-                    </div>
+                <div className="coll GA-c2">
+                    <div className="gallery-image"></div>
+                    <div className="gallery-image"></div>
+                    <div className="gallery-image"></div>
                 </div>
-                <div className="coll">
-                    <div className="gallery-image image-s">
-                        {/* <Image
-                            loaded={loadedFun}
-                            src={mainImages[0].src}
-                            webp={mainImages[0].webp}
-                            alt={mainImages[0].alt}
-                            hash={mainImages[0].hash}
-                            id={mainImages[0].id}
-                        /> */}
-                    </div>
-                    <div className="gallery-image image-xl">
-                        {/* <Image
-                            loaded={loadedFun}
-                            src={mainImages[0].src}
-                            webp={mainImages[0].webp}
-                            alt={mainImages[0].alt}
-                            hash={mainImages[0].hash}
-                            id={mainImages[0].id}
-                        /> */}
-                    </div>
-                    <div className="gallery-image image-s">
-                        {/* <Image
-                            loaded={loadedFun}
-                            src={mainImages[0].src}
-                            webp={mainImages[0].webp}
-                            alt={mainImages[0].alt}
-                            hash={mainImages[0].hash}
-                            id={mainImages[0].id}
-                        /> */}
-                    </div>
+                <div className="coll GA-c3">
+                    <div className="gallery-image"></div>
+                    <div className="gallery-image"></div>
+                    <div className="gallery-image"></div>
                 </div>
-            </div>
+                <div className="coll GA-c4">
+                    <div className="gallery-image"></div>
+                    <div className="gallery-image"></div>
+                    <div className="gallery-image"></div>
+                </div>
 
-            {/* {images.current.map((image) => {
-                return (
-                    <div className="gallery_image" key={image.key}>
-                        <Image
-                            loaded={loadedFun}
-                            src={image.src}
-                            webp={image.webp}
-                            alt={image.alt}
-                            hash={image.hash}
-                            id={image.id}
-                        />
-                    </div>
-                );
-            })} */}
+                {/* {mainImages.map((image) => {
+                    return (
+                        <div className="gallery-image" key={image.key}>
+                            <Image
+                                loaded={loadedFun}
+                                src={image.src}
+                                webp={image.webp}
+                                alt={image.alt}
+                                hash={image.hash}
+                                id={image.id}
+                            />
+                        </div>
+                    );
+                })} */}
+            </div>
         </section>
     );
 }

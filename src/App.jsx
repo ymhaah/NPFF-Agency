@@ -60,7 +60,7 @@ gsap.ticker.add((time) => {
 
 function App() {
     let app = useRef(null);
-    let [imageLoaded, setImageLoaded] = useState(false);
+    let [imageLoaded, setImageLoaded] = useState(true);
 
     // console.log(imageLoaded);
 
