@@ -46,6 +46,13 @@ function Gallery({ setImageLoaded }) {
             },
             y: -300,
         });
+        gsap.from(".gallery-image img", {
+            scrollTrigger: {
+                trigger: ".grid",
+                scrub: true,
+            },
+            objectPosition: "50% 0%",
+        });
     }, [gallery]);
 
     return (
@@ -53,7 +60,16 @@ function Gallery({ setImageLoaded }) {
             <div className="grid">
                 <div className="coll GA-c1">
                     <div className="gallery-image"></div>
-                    <div className="gallery-image"></div>
+                    <div className="gallery-image">
+                        <Image
+                            loaded={loadedFun}
+                            src={mainImages[1].src}
+                            webp={mainImages[1].webp}
+                            alt={mainImages[1].alt}
+                            hash={mainImages[1].hash}
+                            id={mainImages[1].id}
+                        />
+                    </div>
                     <div className="gallery-image"></div>
                 </div>
                 <div className="coll GA-c2">
