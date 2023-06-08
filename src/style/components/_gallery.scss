@@ -6,33 +6,75 @@
 // @include grid(2, 2, fr, 1rem);
 
 .gallery {
-    --gap: 1rem;
-    --image-hight: 45vh;
-    --coll-num: 4;
     width: 100%;
-    min-height: 100vh;
-    margin: 10vh 0s;
-    background-color: var(main-light-clr);
+    height: 100vh;
+    background-color: var(--main-dark-clr);
     position: relative;
-    .grid {
+    .mainImg {
         width: 100%;
-        display: grid;
-        @include grid(-1, var(--coll-num), fr, var(--gap));
-        .coll {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        img {
+            object-position: 50% 100%;
+            filter: blur(1px) grayscale(20%) contrast(120%);
+        }
+    }
+    .gallery-images {
+        width: 100%;
+        height: 100%;
+        @include flex(r, c, c);
+        .grid {
             width: 100%;
-            .gallery-image {
-                height: var(--image-hight, 40vh);
+            height: 45%;
+            @include grid(1, 5, fr, 1rem);
+            margin-left: 100%;
+            .image {
+                height: 100%;
+                aspect-ratio: 9/15;
                 background-color: var(--main-dark-clr);
-                margin-bottom: var(--gap);
                 backface-visibility: hidden;
-                .image {
-                    width: 100%;
-                    height: 100%;
-                    img {
-                        object-position: 50% 100%;
-                    }
+                img {
+                    object-position: 0% 100%;
+                    filter: grayscale(20%) contrast(120%);
                 }
             }
         }
     }
 }
+// .gallery {
+//     --gap: 1rem;
+//     --image-hight: 45vh;
+//     --coll-num: 2;
+//     width: 100%;
+//     height: 100vh;
+//     background-color: var(--main-light-clr);
+//     .grid {
+//         width: 100%;
+//         height: 100%;
+//         display: grid;
+//         @include grid(-1, var(--coll-num), fr, var(--gap));
+//         padding: var(--gap);
+//         .coll {
+//             width: 100%;
+//             height: 100%;
+//             position: relative;
+//             z-index: -1;
+//             .gallery-image {
+//                 aspect-ratio: 9/15;
+//                 background-color: var(--main-dark-clr);
+//                 margin-bottom: var(--gap);
+//                 backface-visibility: hidden;
+//                 .image {
+//                     width: 100%;
+//                     height: 100%;
+//                     img {
+//                         object-position: 50% 100%;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

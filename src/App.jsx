@@ -72,13 +72,13 @@ function App() {
         }
     }, [imageLoaded]);
 
-    let mousePos = useMousePosition((x, y) => {
-        gsap.to(cursorFollower.current, {
-            scale: 50,
-            x: x,
-            y: y,
-        });
-    });
+    // let mousePos = useMousePosition((x, y) => {
+    //     gsap.to(cursorFollower.current, {
+    //         scale: 50,
+    //         x: x,
+    //         y: y,
+    //     });
+    // });
 
     useGsap(() => {
         // gsap.from(".GA-pop", {

@@ -1,12 +1,20 @@
 import { useState, useRef } from "react";
 import { Blurhash } from "react-blurhash";
 
-function Image({ src, webp, hash, id = null, loaded, alt = "" }) {
+function Image({
+    className = "",
+    src,
+    webp,
+    hash,
+    id = null,
+    loaded,
+    alt = "",
+}) {
     const [imgLoaded, setImgLoaded] = useState(false);
     let image = useRef(null);
 
     return (
-        <div className="image">
+        <div className={`image ${className}`}>
             {hash && (
                 <div
                     className="blur"
