@@ -49,7 +49,7 @@ main.hero {
                 }
             }
         }
-        h1 {
+        :where(h1) {
             width: 100%;
             padding: 0 calc(100% - var(--container-width));
             position: fixed;
@@ -70,6 +70,7 @@ main.hero {
         }
         h1 span:nth-child(1) img {
             width: var(--fs-100);
+            height: auto;
             position: absolute;
             top: 0;
             right: -1rem;

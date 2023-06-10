@@ -7,7 +7,7 @@ import useGsap from "../hooks/useGsap.jsx";
 import Image from "@ui/Image.jsx";
 import { mainImages } from "../assets/images/img/imageDate.jsx";
 
-gsap.registerPlugin(ScrollTrigger, Flip);
+gsap.registerPlugin(ScrollTrigger);
 
 function Gallery({ setImageLoaded }) {
     let gallery = useRef();
@@ -18,14 +18,23 @@ function Gallery({ setImageLoaded }) {
     );
 
     useGsap(() => {
-        let mainImg = Flip.getState(".mainImg");
-
+        gsap.to(".GA-to-light", {
+            scrollTrigger: {
+                trigger: ".GA-to-light",
+                toggleActions: "play complete restart reverse",
+                start: "top 75%",
+            },
+            direction: 0.2,
+            delay: 0.1,
+            backgroundColor: "#f9fafb",
+        });
         gsap.to(".GA-slider-left", {
             scrollTrigger: {
                 trigger: ".grid",
                 scrub: true,
+                // start: "top 75%",
             },
-            x: -500,
+            xPercent: 50,
         });
     }, [gallery]);
 
@@ -40,6 +49,7 @@ function Gallery({ setImageLoaded }) {
                 id={mainImages[0].id}
                 className="mainImg"
             />
+            <div className="h-stop GA-to-light"></div>
             <div className="gallery-images">
                 <div className="grid GA-slider-left">
                     <Image

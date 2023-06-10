@@ -10,6 +10,16 @@ let mainImages = [
         shoutOut: "Unsplash/jordy_munoz",
     },
     {
+        src: new URL("./hero-main-H4.jpg", import.meta.url).href,
+        webp: new URL("./webp/hero-main-H4.webp", import.meta.url).href,
+        alt: "A person standing between buildings and smoking a cigar",
+        key: crypto.randomUUID(),
+        id: "H4",
+        hash: "LRGv3LS5M|R%~qWVD%oe%Nj]M{t7",
+        loaded: undefined,
+        shoutOut: "Unsplash/chi_lok_tsang",
+    },
+    {
         src: new URL("./hero-main-H2.jpg", import.meta.url).href,
         webp: new URL("./webp/hero-main-H2.webp", import.meta.url).href,
         alt: "Someone hanging Japanese decorations",
@@ -28,16 +38,6 @@ let mainImages = [
         hash: "LA7x2P%MD%4n~qxuIU9F%Mj]axD%",
         loaded: undefined,
         shoutOut: "Unsplash/amritansh_dubey",
-    },
-    {
-        src: new URL("./hero-main-H4.jpg", import.meta.url).href,
-        webp: new URL("./webp/hero-main-H4.webp", import.meta.url).href,
-        alt: "A person standing between buildings and smoking a cigar",
-        key: crypto.randomUUID(),
-        id: "H4",
-        hash: "LRGv3LS5M|R%~qWVD%oe%Nj]M{t7",
-        loaded: undefined,
-        shoutOut: "Unsplash/chi_lok_tsang",
     },
     {
         src: new URL("./hero-main-H5.jpg", import.meta.url).href,
