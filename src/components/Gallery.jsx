@@ -28,14 +28,13 @@ function Gallery({ setImageLoaded }) {
             delay: 0.1,
             backgroundColor: "#f9fafb",
         });
-        // gsap.to(".GA-slider-left", {
-        //     scrollTrigger: {
-        //         trigger: ".grid",
-        //         scrub: true,
-        //         // start: "top 75%",
-        //     },
-        //     xPercent: 50,
-        // });
+        gsap.to(".GA-parallax img", {
+            scrollTrigger: {
+                trigger: ".grid",
+                scrub: true,
+            },
+            yPercent: -50,
+        });
     }, [gallery]);
 
     return (
@@ -47,7 +46,7 @@ function Gallery({ setImageLoaded }) {
                 alt={mainImages[0].alt}
                 hash={mainImages[0].hash}
                 id={mainImages[0].id}
-                className="mainImg"
+                className="GA-parallax"
             />
             <div className="h-stop GA-to-light"></div>
             <div className="gallery-images">
@@ -59,7 +58,7 @@ function Gallery({ setImageLoaded }) {
                         alt={mainImages[1].alt}
                         hash={mainImages[1].hash}
                         id={mainImages[1].id}
-                        className="wide"
+                        className="GA-parallax"
                     />
                     <Image
                         loaded={loadedFun}
@@ -68,7 +67,7 @@ function Gallery({ setImageLoaded }) {
                         alt={mainImages[2].alt}
                         hash={mainImages[2].hash}
                         id={mainImages[2].id}
-                        className="big"
+                        className="GA-parallax"
                     />
                     <Image
                         loaded={loadedFun}
@@ -77,7 +76,7 @@ function Gallery({ setImageLoaded }) {
                         alt={mainImages[3].alt}
                         hash={mainImages[3].hash}
                         id={mainImages[3].id}
-                        className="wide"
+                        className="GA-parallax"
                     />
                     <Image
                         loaded={loadedFun}
@@ -86,7 +85,7 @@ function Gallery({ setImageLoaded }) {
                         alt={mainImages[4].alt}
                         hash={mainImages[4].hash}
                         id={mainImages[4].id}
-                        className="tall"
+                        className="GA-parallax"
                     />
                 </div>
             </div>

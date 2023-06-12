@@ -20,7 +20,6 @@ export default function useImageLoaded(images, setImageLoaded, delay = 0) {
                 setImageLoaded(true);
                 imagesLoaded = true;
             }, delay * 1000);
-            s;
         }
     }, [imageArr]);
 
