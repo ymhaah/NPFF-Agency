@@ -755,48 +755,65 @@ main.hero .Container h1 span:nth-child(2) {
 
 .gallery {
   width: 100%;
-  height: 300vh;
+  min-height: 250vh;
   background-color: var(--main-dark-clr);
-  position: relative;
+  overflow: hidden;
 }
-.gallery .mainImg {
+.gallery .gallery-grid {
+  --gap: 2rem;
   width: 100%;
   height: 100vh;
-  position: absolute;
-  top: 100vh;
-  left: 0;
+  padding: var(--gap) 1rem;
+  background-color: #060504;
+  display: grid;
+  grid-gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-flow: dense;
 }
-.gallery .mainImg img {
-  filter: blur(1px) grayscale(20%) contrast(120%);
+.gallery .gallery-grid .image:nth-child(1) {
+  margin-top: 30vh;
+}
+.gallery .gallery-grid .image:nth-child(2) {
+  margin-top: 70vh;
+}
+.gallery .gallery-grid .image:nth-child(3) {
+  margin-top: 15vh;
+}
+.gallery .gallery-grid .image:nth-child(4) {
+  margin-top: 100vh;
 }
 .gallery .h-stop {
   width: 100%;
   height: 100vh;
-  background-color: #060504;
+  background-color: var(--main-dark-clr);
 }
-.gallery .gallery-images {
+.gallery .mainImg {
   width: 100%;
-  height: 100vh;
-  background-color: #060504;
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
 }
-.gallery .gallery-images .grid {
+.gallery .mainImg img {
   width: 100%;
-  height: 100%;
+  height: 200%;
+  filter: blur(1px) grayscale(20%) contrast(120%);
 }
 .gallery .image {
-  height: 25vh;
-  width: 25vw;
+  width: 100%;
+  aspect-ratio: 1/1;
   backface-visibility: hidden;
-  position: relative;
   overflow: hidden;
 }
 .gallery .image img {
   width: 100%;
-  height: 150%;
-  position: absolute;
-  top: 0;
+  height: 100%;
   filter: blur(0.5px) grayscale(20%) contrast(120%);
   border-radius: 2px;
+}
+
+.test {
+  width: 100%;
+  height: 100vh;
 }
 
 footer {

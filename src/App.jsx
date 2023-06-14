@@ -104,6 +104,7 @@ function App() {
             ></div>
             <Hero />
             <Gallery setImageLoaded={setImageLoaded} />
+            <div className="test"></div>
         </div>
     );
 }
