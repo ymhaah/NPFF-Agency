@@ -32,15 +32,9 @@ function Gallery({ setImageLoaded }) {
             scrollTrigger: {
                 trigger: ".gallery-grid",
                 scrub: true,
+                start: "top 75%",
             },
-            yPercent: -300,
-        });
-        gsap.to(".GA-parallax img", {
-            scrollTrigger: {
-                trigger: ".GA-parallax",
-                scrub: true,
-            },
-            yPercent: -50,
+            yPercent: -200,
         });
     }, [gallery]);
 
@@ -79,17 +73,16 @@ function Gallery({ setImageLoaded }) {
                     hash={mainImages[4].hash}
                     id={mainImages[4].id}
                 />
+                <Image
+                    loaded={loadedFun}
+                    src={mainImages[0].src}
+                    webp={mainImages[0].webp}
+                    alt={mainImages[0].alt}
+                    hash={mainImages[0].hash}
+                    id={mainImages[0].id}
+                />
             </div>
             <div className="h-stop"></div>
-            <Image
-                loaded={loadedFun}
-                src={mainImages[0].src}
-                webp={mainImages[0].webp}
-                alt={mainImages[0].alt}
-                hash={mainImages[0].hash}
-                id={mainImages[0].id}
-                className="mainImg GA-parallax"
-            />
         </section>
     );
 }
