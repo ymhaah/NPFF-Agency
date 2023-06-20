@@ -1,10 +1,12 @@
-import { useRef, useState } from "react";
-import useImageLoaded from "../hooks/useImageLoaded.jsx";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import useImageLoaded from "../hooks/useImageLoaded.jsx";
 import useGsap from "../hooks/useGsap.jsx";
+
 import Image from "@ui/Image.jsx";
+
 import { mainImages } from "../assets/images/img/imageDate.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -35,6 +37,23 @@ function Gallery({ setImageLoaded }) {
                 start: "top 75%",
             },
             yPercent: -200,
+        });
+        gsap.to(".h-stop", {
+            scrollTrigger: {
+                trigger: ".h-stop",
+                start: "top center",
+                toggleActions: "play complete restart reverse",
+            },
+            onComplete: () => {
+                import("react-hot-toast")
+                    .then((module) => {
+                        return { default: module.toast };
+                    })
+                    .then((module) => {
+                        let toast = module.default;
+                        toast.error("This website still under development");
+                    });
+            },
         });
     }, [gallery]);
 
