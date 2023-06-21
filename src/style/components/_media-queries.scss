@@ -23,13 +23,8 @@
 
 @media screen and (max-width: #{toEm(1024px)}) {
     .gallery {
-        // --gap: 1rem;
-        // --image-hight: 60vh;
-        --coll-num: 3;
-        .grid {
-            :nth-child(4) {
-                display: none;
-            }
+        .gallery-grid .image:nth-child(4) {
+            display: none;
         }
     }
 }
@@ -54,14 +49,10 @@
             --container-width: 90%;
         }
     }
+
     .gallery {
-        // --gap: 1rem;
-        // --image-hight: 60vh;
-        --coll-num: 2;
-        .grid {
-            :nth-child(3) {
-                display: none;
-            }
+        .gallery-grid .image:nth-child(3) {
+            display: none;
         }
     }
 }
@@ -78,10 +69,11 @@
             --size: 50vw;
         }
     }
+
     .gallery {
-        // --gap: 1rem;
-        // --image-hight: 60vh;
-        --coll-num: 1;
+        .gallery-grid .image:nth-child(2) {
+            display: none;
+        }
     }
 }
 

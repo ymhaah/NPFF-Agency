@@ -21,6 +21,7 @@
         grid-gap: var(--gap);
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         grid-auto-flow: dense;
+        overflow: hidden;
     }
     .gallery-grid .image:nth-child(1) {
         margin-top: calc(25vh + var(--grid-hight) / 3.4);
@@ -39,21 +40,8 @@
     }
     .h-stop {
         width: 100%;
-        height: 50vh;
+        height: 100vh;
         background-color: var(--main-dark-clr);
-    }
-    .mainImg {
-        width: 100%;
-        height: 50vh;
-        position: relative;
-        overflow: hidden;
-        img {
-            width: 100%;
-            height: 200%;
-            // position: absolute;
-            // top: 50%;
-            filter: blur(1px) grayscale(20%) contrast(120%);
-        }
     }
     .image {
         width: 100%;

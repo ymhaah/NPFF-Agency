@@ -14,17 +14,11 @@
 *::before,
 *::after {
     box-sizing: border-box;
-    // margin: 0;
-    // padding: 0;
 }
 html,
 html:focus-within {
     text-size-adjust: none;
     background-color: var(--clr-white);
-    // scroll-snap-type: mandatory;
-    // scroll-snap-type: y mandatory;
-    // scroll-snap-stop: always;
-    // scroll-padding: 10vh;
 }
 
 body {
@@ -39,7 +33,6 @@ html,
 body {
     max-width: 100%;
     overflow-x: hidden;
-    // background-color: var(--bg-clr);
 }
 html.lenis {
     height: auto;
@@ -68,21 +61,12 @@ html.lenis {
     isolation: isolate;
     opacity: 70%;
 }
-.App {
-}
 .Container {
     --container-width: 95%;
     height: 100%;
     width: var(--container-width, 90%);
     margin-inline: auto;
 }
-
-// section,
-// footer,
-// article:not([class]) {
-// 	scroll-snap-align: start;
-// 	// scroll-margin: 10vh;
-// }
 li,
 ul {
     list-style-type: none;
@@ -95,28 +79,19 @@ ul {
 ::-moz-focus-inner {
     border: none;
 }
-
-// ::-webkit-scrollbar {
-
-// }
-
 :focus {
     outline: 2px solid transparent;
 }
 .focus {
     --focus-shadow: 0 0 0 transparent;
     --accent-clr: var(--main-light-clr);
-    box-shadow: var(--focus-shadow), 0 0 0 -0.4em var(--bg-clr),
+    box-shadow: var(--focus-shadow), 0 0 0 -0.4em var(--main-dark-clr),
         0 0 0 -0.6em var(--accent-clr);
     transition: box-shadow 400ms cubic-bezier(0.66, -0.2, 0.27, 1.15);
 }
 .focus:focus-visible {
-    // outline-color: var(--clr-blue-500);
-    // outline-style: solid;
-    // outline-width: 3px;
-    // outline-offset: 5px;
     outline: 2px solid transparent;
-    box-shadow: var(--focus-shadow), 0 0 0 0.25em var(--bg-clr),
+    box-shadow: var(--focus-shadow), 0 0 0 0.25em var(--main-dark-clr),
         0 0 0 0.45em var(--accent-clr);
 }
 input,
@@ -190,15 +165,12 @@ svg {
     border-radius: 5rem;
     --focus-shadow: inset 0px -0.4rem 0 var(--main-light-clr);
 }
-.inputFiled {
-    outline: 2px solid transparent;
-}
-.Button:has(img, svg) {
-}
-.Button:where(:hover, :active):not(:has(img, svg)) {
-}
-.Button:has(img, svg):where(:hover, :active) {
-}
+// .Button:has(img, svg) {
+// }
+// .Button:where(:hover, :active):not(:has(img, svg)) {
+// }
+// .Button:has(img, svg):where(:hover, :active) {
+// }
 .Button:not(:last-child) {
     margin: 0 0 1rem 0;
 }
@@ -214,7 +186,6 @@ svg {
     white-space: nowrap !important;
     border: 0 !important;
 }
-
 .old-script,
 .no-script {
     width: 100vw;
@@ -234,8 +205,4 @@ svg {
 .no-scroll {
     height: 100vh !important;
     overflow: hidden !important;
-}
-.accent-X-clr {
-    --accent-clr: var(--accent-X-clr);
-    --accent-shadow-clr: var(--clr-teal-blue-500);
 }
