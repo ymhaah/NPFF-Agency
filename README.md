@@ -1,4 +1,4 @@
-# NPFF-Agency --> nice project for freelace
+# NPFF-Agency --> nice project for freelance
 
 > Project Notes and Resources (Language: Arabic) --> [Note](./notes/Notes.md)
 
@@ -10,7 +10,6 @@
 
 ### Links
 
--   [Live Site URL](https://ymhaah.github.io/NPFF-Agency/)
 -   [Elvina Prasad – Portfolio](https://www.elvinaprasad.com/) - Inspired by it.
 -   [CSS Single Element Goey Spinner](https://codepen.io/z-/pen/YzPxWyW) - website loader.
 
