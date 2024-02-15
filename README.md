@@ -1,6 +1,10 @@
-# NPFF-Agency --> nice project for freelance
+# NPFF-Agency 
 
-> Project Notes and Resources (Language: Arabic) --> [Note](./notes/Notes.md)
+> Project Description: User-Centered Design Portfolio
+
+Embark on a visual journey through my latest project—a user-centered design site crafted with a focus on people and their unique experiences.
+This platform seamlessly blends efficiency, ease of use, and enjoyment, achieved through rigorous usability testing involving real users and personas. 
+Explore the intersection of design and user satisfaction as we prioritize a seamless and delightful online experience. Welcome to a portfolio that not only showcases skills but also embodies the essence of user-centric design principles.
 
 ### Screenshot
 
@@ -127,7 +131,7 @@ _text-wrap_
 }
 ```
 
-_Make elements follow rounded corners with: cos() & sin()_
+_Make elements follow rounded corners with CSS cos() & sin()_
 
 ```scss
 .circle {
