@@ -1,7 +1,9 @@
 # NPFF-Agency 
+> Start at: Mar 6, 2023
 
-> Project Description: User-Centered Design Portfolio
+### Project Description
 
+User-Centered Design Portfolio
 Embark on a visual journey through my latest project—a user-centered design site crafted with a focus on people and their unique experiences.
 This platform seamlessly blends efficiency, ease of use, and enjoyment, achieved through rigorous usability testing involving real users and personas. 
 Explore the intersection of design and user satisfaction as we prioritize a seamless and delightful online experience. Welcome to a portfolio that not only showcases skills but also embodies the essence of user-centric design principles.
@@ -268,12 +270,16 @@ Check out my latest previous articles:
 -   [30-Day React Learning Journey!](https://dev.to/ymhaah/series/20473)
 
 ## Author
-
 -   professional links:
-    -   [Twitter](https://twitter.com/hafanwy)
-    -   [LinkedIn](https://www.linkedin.com/in/youssef-hafnawy/)
+    - [Twitter / X](https://twitter.com/hafanwy)
+    - [LinkedIn](https://www.linkedin.com/in/youssef-hafnawy/)
+    - [Newsletter](https://hefnawystudio.substack.com/?utm_source=navbar&utm_medium=web&r=31jf6o)
 -   Hire me:
     -   [UpWork](https://www.upwork.com/freelancers/~01acd8e5370e5646aa)
 -   Blog:
     -   [Medium](https://medium.com/@ymhaah250)
     -   [Dev.to](https://dev.to/ymhaah)
+
+### Free Services
+- [Free Website performance Optimization](https://tally.so/r/nPzKaB)   
+- [Free Website Accessibility Optimization](https://tally.so/r/3lr2bp)   
