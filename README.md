@@ -3,7 +3,7 @@
 
 ### Project Description
 
-This is a landing page for a Design Portfolio website designed to showcase a mock project for a design agency with a focus on people and their unique experiences. The goal of this project is to create a visually appealing and responsive landing page that highlights the concept of a modern portfolio. The page includes interactive elements and modern UI/UX design principles.
+This is a landing page for a Design Portfolio website designed to showcase a mock project for a design agency with a focus on people and their unique experiences, The goal of this project is to create a visually appealing and responsive landing page that highlights the concept of a modern portfolio. The page includes interactive elements and modern UI/UX design principles.
 
 
 ### Screenshot
