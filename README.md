@@ -3,10 +3,8 @@
 
 ### Project Description
 
-User-Centered Design Portfolio
-Embark on a visual journey through my latest project—a user-centered design site crafted with a focus on people and their unique experiences.
-This platform seamlessly blends efficiency, ease of use, and enjoyment, achieved through rigorous usability testing involving real users and personas. 
-Explore the intersection of design and user satisfaction as we prioritize a seamless and delightful online experience. Welcome to a portfolio that not only showcases skills but also embodies the essence of user-centric design principles.
+This is a landing page for a Design Portfolio website designed to showcase a mock project for a design agency with a focus on people and their unique experiences. The goal of this project is to create a visually appealing and responsive landing page that highlights the concept of a modern portfolio. The page includes interactive elements and modern UI/UX design principles.
+
 
 ### Screenshot
 
